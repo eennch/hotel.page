@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>礁溪寒沐酒店・望岳閣尊榮全攻略 (2026/12/5 - 12/7)</title>
+
+  <!-- 📱 PWA & 原生 Mobile Web App 規格標籤 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="礁溪寒沐望岳閣">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#382e25">
+  <meta name="application-name" content="礁溪寒沐望岳閣">
+  
+  <!-- ♨️ 手機桌面專屬 Web App 質感圖示 -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23382e25'/><text x='50%' y='68%' font-size='52' text-anchor='middle'>♨️</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23382e25'/><text x='50%' y='68%' font-size='52' text-anchor='middle'>♨️</text></svg>">
+
+  <style>
+    :root {
+      --primary: #4a3e35;
+      --primary-light: #f7f5f0;
+      --accent: #b08d57;
+      --dark: #222222;
+      --gray: #666666;
+      --bg: #f8f7f4;
+      --card-bg: #ffffff;
+      --border: #e3ded5;
+
+      /* 🟢 房客免費標籤 */
+      --free-bg: #2e7d32;
+      --free-text: #ffffff;
+
+      /* 🔴 自費與警告標籤 */
+      --charge-bg: #d32f2f;
+      --charge-text: #ffffff;
+
+      /* 🖍️ 螢光筆高亮樣式 (日間模式) */
+      --hl-bg: linear-gradient(120deg, rgba(255, 230, 130, 0.6) 0%, rgba(255, 214, 79, 0.8) 100%);
+      --hl-text: #2a1f0a;
+    }
+
+    /* 🌙 高對比 / 夜間模式 */
+    body.dark-mode {
+      --primary: #e0cfb8;
+      --primary-light: #2c251f;
+      --accent: #d4af37;
+      --dark: #f0f0f0;
+      --gray: #aaaaaa;
+      --bg: #181512;
+      --card-bg: #241f1a;
+      --border: #423830;
+      --free-bg: #388e3c;
+      --charge-bg: #e53935;
+
+      /* 🖍️ 螢光筆高亮樣式 (夜間模式：流金暖色) */
+      --hl-bg: linear-gradient(120deg, rgba(212, 175, 55, 0.4) 0%, rgba(255, 215, 0, 0.5) 100%);
+      --hl-text: #fff6d6;
+    }
+
+    /* 🔍 長輩大字體模式 */
+    body.large-font {
+      font-size: 1.15rem;
+    }
+    body.large-font p, body.large-font li, body.large-font .item-desc, body.large-font .local-desc {
+      font-size: 1.05rem !important;
+    }
+    body.large-font h3 {
+      font-size: 1.1rem !important;
+    }
+    body.large-font .card-title {
+      font-size: 1.2rem !important;
+    }
+
+    /* 📱 iPhone 專屬 Anti-annoyance & 觸控優化 */
+    html, body {
+      touch-action: manipulation;
+      overscroll-behavior-y: none;
+      -webkit-text-size-adjust: 100%;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Microsoft JhengHei", Roboto, sans-serif;
+      /* ⚡ 消除 iOS 灰色點擊閃爍 */
+      -webkit-tap-highlight-color: transparent;
+    }
+    button, .tab-nav, .bottom-tab-bar, .filter-pill, .sort-btn, .map-btn-action, .copy-btn, .tel-call-btn {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: calc(105px + env(safe-area-inset-bottom));
+      word-break: break-all;
+      overflow-x: hidden;
+      transition: background-color 0.3s, color 0.3s, font-size 0.2s;
+    }
+    header {
+      background: #382e25;
+      color: #fff;
+      padding: 22px 16px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+      position: relative;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      word-break: keep-all;
+    }
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    .date-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* 🖍️ 視覺掃描螢光筆類別 */
+    .hl {
+      background: var(--hl-bg);
+      color: var(--hl-text);
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    
+    /* 頂部導覽列 */
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .tab-nav-container {
+      position: relative;
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+    .tab-nav-container::after {
+      content: '👉';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background: linear-gradient(to left, var(--card-bg) 40%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 6px;
+      font-size: 0.8rem;
+      pointer-events: none;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+    .tab-nav-container.scrolled-end::after {
+      opacity: 0;
+    }
+    .tab-nav {
+      display: flex;
+      overflow-x: auto;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .tab-nav button {
+      flex: 0 0 auto;
+      background: none;
+      border: none;
+      outline: none;
+      padding: 13px 18px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--gray);
+      cursor: pointer;
+      position: relative;
+      white-space: nowrap;
+    }
+    .tab-nav button.active {
+      color: var(--primary);
+      background-color: var(--primary-light);
+    }
+    .tab-nav button.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    .control-btn-group {
+      display: flex;
+      align-items: center;
+      border-left: 1px solid var(--border);
+      background: var(--card-bg);
+      z-index: 1010;
+    }
+    .theme-toggle-btn, .font-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      padding: 10px 12px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+    .font-toggle-btn {
+      font-weight: bold;
+      font-size: 0.95rem;
+      border-left: 1px solid var(--border);
+    }
+
+    /* 分頁區塊 */
+    .container {
+      padding: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 卡片設計 */
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      word-break: keep-all;
+    }
+    h3 {
+      font-size: 0.92rem;
+      color: var(--primary);
+      margin: 14px 0 6px 0;
+      font-weight: bold;
+      border-left: 3px solid var(--accent);
+      padding-left: 8px;
+      word-break: keep-all;
+    }
+    .building-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #fff;
+      background: var(--primary);
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin: 16px 0 10px 0;
+      word-break: keep-all;
+    }
+    p, li {
+      font-size: 0.88rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    ul, ol {
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* 標籤與按鈕 */
+    .tag-free {
+      display: inline-block;
+      background-color: var(--free-bg);
+      color: var(--free-text);
+      font-size: 0.72rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .tag-charge {
+      display: inline-block;
+      background-color: var(--charge-bg);
+      color: var(--charge-text);
+      font-size: 0.72rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary-light);
+      border: 1px solid var(--accent);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      cursor: pointer;
+      vertical-align: middle;
+      transition: background 0.2s;
+    }
+    .copy-btn:active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* 📞 iPhone 原生直撥含分機按鈕 */
+    .tel-call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: bold;
+      padding: 11px 14px;
+      border-radius: 8px;
+      margin: 8px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      transition: opacity 0.2s, transform 0.2s;
+      width: 100%;
+      text-align: center;
+    }
+    .tel-call-btn:active {
+      opacity: 0.85;
+      transform: scale(0.98);
+    }
+
+    /* 🟢/🔴 設施即時營運狀態標籤 */
+    .live-status {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .status-open {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #a5d6a7;
+    }
+    .status-closed {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ffcdd2;
+    }
+
+    /* 清單排版 */
+    .item-list {
+      margin-top: 8px;
+    }
+    .item-row {
+      border-bottom: 1px dashed var(--border);
+      padding: 12px 0;
+    }
+    .item-row:last-child {
+      border-bottom: none;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 0.92rem;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .item-header span {
+      flex: 1;
+      min-width: 150px;
+      word-break: keep-all;
+    }
+    .item-sub {
+      font-size: 0.8rem;
+      color: var(--charge-bg);
+      margin: 3px 0;
+      font-weight: bold;
+      word-break: keep-all;
+    }
+    .item-desc {
+      font-size: 0.84rem;
+      color: var(--gray);
+      margin-top: 4px;
+      line-height: 1.48;
+    }
+
+    /* 🎛️ 周邊控制台（類別篩選 ＆ 排序 ＆ iOS 毛玻璃搜尋列） */
+    .filter-panel {
+      background: var(--card-bg);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    .ios-search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: rgba(240, 235, 226, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2px 10px;
+    }
+    body.dark-mode .ios-search-wrapper {
+      background: rgba(45, 38, 30, 0.8);
+    }
+    .ios-search-icon {
+      font-size: 0.92rem;
+      margin-right: 6px;
+      opacity: 0.7;
+    }
+    .ios-search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 0.88rem;
+      padding: 9px 0;
+      color: var(--dark);
+      font-family: inherit;
+    }
+    .ios-search-clear {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: var(--gray);
+      cursor: pointer;
+      display: none;
+      padding: 4px;
+    }
+    .filter-section-title {
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .filter-pills {
+      display: flex;
+      overflow-x: auto;
+      gap: 6px;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filter-pills::-webkit-scrollbar { display: none; }
+    .filter-pill {
+      flex: 0 0 auto;
+      background: var(--primary-light);
+      border: 1px solid var(--border);
+      color: var(--dark);
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .filter-pill.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 2px 4px rgba(176,141,87,0.3);
+    }
+    .sort-group {
+      display: flex;
+      gap: 6px;
+      background: var(--primary-light);
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .sort-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding: 7px 4px;
+      border-radius: 6px;
+      color: var(--gray);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .sort-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .results-count {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 4px;
+      text-align: right;
+    }
+
+    /* 🗺️ 周邊名店精緻卡片排版 */
+    .local-card {
+      background: var(--primary-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .local-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .local-title {
+      font-size: 0.98rem;
+      font-weight: bold;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+    .local-badge-wrap {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .local-dist-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: bold;
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .local-time-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: bold;
+      background: #4a3e35;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .local-desc {
+      font-size: 0.84rem;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .map-btn-group {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .map-btn-action {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: bold;
+      padding: 10px 4px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .google-btn {
+      background-color: #1a73e8;
+      color: #ffffff;
+    }
+    .copy-addr-btn {
+      background-color: #f0e6d6;
+      color: var(--primary);
+      border: 1px solid var(--accent);
+    }
+
+    /* 提示外框 */
+    .ticket-box {
+      background: #fff9e6;
+      border-left: 4px solid #d4af37;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      border: 1px solid #f2e3be;
+    }
+    body.dark-mode .ticket-box {
+      background: #2a2415;
+      border: 1px solid #4a3e20;
+    }
+    .info-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.85rem;
+    }
+    .alert-box {
+      background: #fdf2f2;
+      border-left: 4px solid var(--charge-bg);
+      padding: 10px 12px;
+      border-radius: 4px;
+      margin: 12px 0;
+      font-size: 0.85rem;
+    }
+    body.dark-mode .alert-box {
+      background: #331515;
+    }
+
+    .pillow-item {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: var(--card-bg);
+    }
+    .pillow-name {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* 🔝 置頂按鈕智慧淡入淡出（Smart Floating Button） */
+    .back-to-top {
+      position: fixed;
+      right: 16px;
+      bottom: calc(95px + env(safe-area-inset-bottom));
+      width: 44px;
+      height: 44px;
+      background: rgba(46, 36, 28, 0.8);
+      color: #ffffff;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      /* 智慧浮現初始狀態 */
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    /* 智慧浮現顯示狀態 */
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* 🛡️ iPhone 專屬加寬安全留白底部導覽列 */
+    .bottom-tab-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0 calc(14px + env(safe-area-inset-bottom)) 0;
+      z-index: 1000;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      /* 避讓鍵盤動畫 */
+      transition: transform 0.2s ease;
+    }
+    .bottom-tab-item {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 0.65rem;
+      font-weight: bold;
+      cursor: pointer;
+      white-space: nowrap;
+      padding: 2px 0;
+    }
+    .bottom-tab-item .icon {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+    .bottom-tab-item.active {
+      color: var(--accent);
+    }
+
+    /* 🔍 搜尋「無結果」空狀態提示（Empty State Feedback） */
+    .empty-search-state {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--gray);
+      font-size: 0.88rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏨 礁溪寒沐酒店・望岳閣尊榮全攻略</h1>
+    <p>全細節無漏 ＋ 確切金額明細 ＋ iPhone 手勢優化版</p>
+    <div class="date-badge">📅 2026年12月5日 (六) ～ 12月7日 (一) 3天2夜</div>
+  </header>
+
+  <div class="nav-wrapper">
+    <div class="tab-nav-container" id="navContainer">
+      <div class="tab-nav" id="tabNav" onscroll="handleNavScroll()">
+        <button class="active tab-btn-info" onclick="switchTab(event, 'tab-info')">📌 訂房硬體</button>
+        <button class="tab-btn-mutop" onclick="switchTab(event, 'tab-mutop')">🥂 MU TOP酒廊</button>
+        <button class="tab-btn-dining" onclick="switchTab(event, 'tab-dining')">🍽️ 全館美食</button>
+        <button class="tab-btn-facilities" onclick="switchTab(event, 'tab-facilities')">🏊 核心設施</button>
+        <button class="tab-btn-diy" onclick="switchTab(event, 'tab-diy')">🎨 館內活動</button>
+        <button class="tab-btn-local" onclick="switchTab(event, 'tab-local')">🗺️ 礁溪周邊</button>
+        <button class="tab-btn-tips" onclick="switchTab(event, 'tab-tips')">🚗 交通/防雷</button>
+      </div>
+    </div>
+    <div class="control-btn-group">
+      <button class="font-toggle-btn" onclick="toggleFontSize()" title="切換長輩字體放大">A+</button>
+      <button class="theme-toggle-btn" onclick="toggleTheme()" title="切換高對比模式">☀️</button>
+    </div>
+  </div>
+
+  <div class="container" id="mainContainer">
+
+    <!-- TAB 1: 訂房硬體 -->
+    <div id="tab-info" class="tab-content active">
+      <div class="card">
+        <div class="card-title">📌 核心入住與關鍵時間資訊</div>
+        <ul>
+          <li><strong>入住日期：</strong>2026年12月5日 (六) ～ 12月7日 (一)（三天兩夜）</li>
+          <li><strong>入住房型：</strong><span class="hl">行館棟｜望岳閣四人房</span>（兩大床／約 20 坪）</li>
+          <li><strong>人數禮遇：</strong>4 大贈 1 大（共 5 位大人加床禮遇，夜間開床加設沙發床 195cm × 157cm）</li>
+          <li><strong>入住時間：</strong>15:00（👑 <strong>專案隱藏禮遇：<span class="hl">13:00 起提前至行館 12 樓 MU TOP 由管家一對一辦理入住</span></strong>，開吃下午茶免排隊！）</li>
+          <li><strong>退房時間：</strong><span class="hl">11:00 前</span></li>
+          <li><strong>設施使用：</strong><span class="hl">入住日 12:30 可提早登記玩設施</span>；退房日 11:00 後<span class="hl">免費續玩設施至 15:00</span>。</li>
+        </ul>
+        <div class="info-box">
+          <strong>🗺️ 兩棟配置一分鐘搞懂（過街步行僅需 1 分鐘）：</strong><br>
+          • <strong>【行館棟】（您住這棟）：</strong>望岳閣客房、12F MU TOP 酒廊、1F 光之湯日式裸湯。<br>
+          • <strong>【酒店棟／本館】（馬路對面）：</strong>2F MU TABLE 自助餐、1F 樂未央遊戲區/MUMU沐選、6F 大泳池/滑水道/SPA水療/健身房。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🛏️ 望岳閣房內奢華設備、語音智慧與免費備品</div>
+        <h3>1. 獨立更衣室與房內 3 大電器娛樂設備</h3>
+        <ul>
+          <li><strong>獨立更衣室（Walk-in Closet）：</strong><span class="hl">房內特別規劃獨立更衣間與行李置放檯面</span>。同行 5 人所有大行李箱與厚大衣通通可攤開收納於更衣室，客廳與兩張大床區域完全不雜亂，視覺開闊大器！</li>
+          <li><strong>小美犀 AI 語音管家（附實用語音作弊條）：</strong>床頭聲控即可。
+            <div class="info-box" style="margin: 6px 0; background-color: #faf7f2;">
+              <strong>🗣️ 必備小美犀 5 大中文語音指令：</strong><br>
+              1. 「小美犀，<span class="hl">關閉所有電燈</span>」（躺平免下床按開關）<br>
+              2. 「小美犀，<span class="hl">房間溫度調到 23 度</span>」<br>
+              3. 「小美犀，<span class="hl">播放放鬆的輕音樂</span>」（邊泡溫泉邊聽音樂極享受）<br>
+              4. 「小美犀，<span class="hl">我需要冰塊桶</span>」（系統直連客房部送件極快）<br>
+              5. 「小美犀，<span class="hl">多送兩條大浴巾</span>」
+            </div>
+          </li>
+          <li><strong>客房 65 吋電視 ＆ 電影頻道：</strong>內建寒舍高畫質隨選影音，<span class="hl">院線電影完全免費觀看</span>。</li>
+          <li><strong>Panasonic 女王級吹風機：</strong>客房頂規配備 Panasonic nanocare ULTIMATE，高滲透奈米水離子保濕，泡湯乾髮極快。</li>
+          <li><strong>房內獨立任天堂 Switch 主機：</strong><span class="tag-free">🎁 特殊禮遇：房內專屬配置</span> 配置專屬 Switch 主機與《健身環大冒險》，<span class="hl">房內即可對戰，免去電競室排隊</span>。</li>
+          <li><strong>Fuji 專業美腿按摩機：</strong>房內貼心配置美腿機，舒緩全家人玩水或散步後的腿部肌肉疲勞。</li>
+        </ul>
+
+        <h3>2. 客房 Mini Bar 飲品與迎賓點心</h3>
+        <ul>
+          <li><strong>客房冰箱冷藏飲料：</strong>汽水、果汁、無糖茶等，住宿期間<span class="hl">供您免費一次性享用</span>。</li>
+          <li><strong>膠囊咖啡與迎賓茶點：</strong>義式膠囊咖啡機、精選茶包與宜蘭金桔蜜餞、手工點心。</li>
+          <li><strong>房內生飲設備：</strong>配合減塑政策全面安裝專用「淨水生飲設備」與快煮壺。</li>
+        </ul>
+
+        <h3>3. 衛浴系統、大溫泉池放水防呆與奢華備品</h3>
+        <ul>
+          <li><strong>私人溫泉泡湯池：</strong>獨立下沉式花崗岩大泡湯池，100% 純正碳酸氫鈉泉（美人湯）。<br>
+          <strong style="color:var(--accent);">💡 溫泉放水防呆小撇步：</strong>池子極大，蓄水需 20～25 分鐘！<span class="hl">老饕強烈建議：進房第一件事先去開水龍頭放水</span>，放水時再去整理行李，不用坐在池邊乾等！</li>
+          <li><strong>英國 ESPA 沐浴保養組：</strong>引進頂級水療品牌 ESPA 沐浴 5 件組。</li>
+          <li><strong>TOTO 智慧免治馬桶：</strong>獨立廁所間，具備感應掀蓋、座墊加熱與自動除臭。</li>
+          <li><strong>日式浴衣與防滑拖鞋：</strong><span class="tag-free">🎁 拖鞋可免費帶走</span> 厚實「仿藺草防滑拖鞋」，<span class="hl">退房時拖鞋可直接打包帶走留念</span>。</li>
+          <li><strong>房內多國通用插座：</strong>床頭與書桌均配有多國通用插座與獨立 USB 直接充電孔，<span class="hl">不需自備轉接頭</span>。</li>
+        </ul>
+        <div class="alert-box">
+          <strong>⚠️ 環保備品自備提醒：</strong>配合減塑政策，<span class="hl">不主動提供牙刷、牙膏、刮鬍刀、梳子、浴帽</span>，請務必自行攜帶！
+        </div>
+
+        <h3>4. 睡眠隱藏版客製化枕頭選單（致電客務中心即可免費送至房內）</h3>
+        <p><strong>夜間開床服務 (Turn-down)：</strong>傍晚用餐期間，房務會入內將客廳沙發鋪設為第 5 人沙發睡床。<br>
+        <strong>免費預約親子備品：</strong>可提前預訂嬰兒床、Combi 消毒鍋、嬰兒澡盆，以及高檔的 <span class="hl">施巴 Sebamed 親子沐浴組</span>。</p>
+        
+        <div class="pillow-item"><div class="pillow-name"><span>🍃 天然茶香茶葉枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：壓力大、淺眠、喜愛草本自然茶香的旅客。</div></div>
+        <div class="pillow-item"><div class="pillow-name"><span>🦾 人體工學記憶枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：習慣仰睡、肩頸容易痠痛、需要高度支撐力的人。</div></div>
+        <div class="pillow-item"><div class="pillow-name"><span>🛡️ 天然乳膠防蟎枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：容易過敏、睡覺容易流汗怕悶熱的人.</div></div>
+        <div class="pillow-item"><div class="pillow-name"><span>☁️ 防過敏透氣纖維枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：喜愛蓬鬆包覆感且對羽絨過敏的人。</div></div>
+      </div>
+    </div>
+
+    <!-- TAB 2: MU TOP酒廊 -->
+    <div id="tab-mutop" class="tab-content">
+      <div class="card">
+        <div class="card-title">
+          🥂 行館 12F：MU TOP 尊榮貴賓廳
+          <span class="live-status" id="status-mutop"></span>
+        </div>
+        <p>約 60 坪空間，落地窗俯瞰蘭陽平原夜景。<span class="hl">望岳閣房客憑房卡全免費！</span></p>
+        <p><strong>🕒 開放時間：</strong>每日 <span class="hl">13:00 - 21:00</span>（全天開放 8 小時）</p>
+        
+        <div class="alert-box">
+          <strong>⚠️ 12月極寒防風與防擠分流提醒：</strong><br>
+          • <strong>❄️ 跨棟防風提醒：</strong>12 月晚間山風刺骨。從 12F 喝完去對面吃晚餐或回行館時，<span class="hl">務必披上衣櫃內的厚外罩或自備防風外套</span>，避免過街受寒。<br>
+          • 週末房客多時，17:00-20:00 Happy Hour 現場可能採分流制。<span class="hl">建議 13:00 Check-in 時先跟管家預約好晚間入場梯次</span>！
+        </div>
+
+        <h3>🕒 三大時段網友實測攻略</h3>
+        <div class="item-row">
+          <div class="item-header"><span>13:00 - 17:00 ｜ 專屬入住與禪意午茶</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">
+            ★ 網友大推：<span class="hl">【登義參藥行】漢方茶聞香體驗</span>，管家提供精緻聞香瓶挑選，使用鑄鐵壺現場沖泡！<br>
+            ★ 必吃點心：<span class="hl">【MUMU沐選】出爐招牌「三星蔥麵包」</span>（必拿！）、巧克力麵包、冷藏軟性飲料與百威啤酒隨便拿。
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item-header"><span>17:00 - 20:00 ｜ Happy Hour 澎湃美酒鹹點大爆發</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">
+            ★ 主食級必拿：<span class="hl">★「酪梨蝦仁可頌」</span>（大隻鮮蝦與酪梨綠醬，一盤難求！）、伊比利火腿起司冷肉盤、蘭陽櫻桃鴨賞、法式馬卡龍、香草蘋果派。<br>
+            ★ 限定品酩禮遇：指定尊榮房型憑卡可免費兌換品飲一杯市售高檔蘇格蘭 <span class="hl">「WILDMOOR 遠慕 21 年威士忌」</span>。
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item-header"><span>19:30 - 21:00 ｜ 窗邊夜景延長戰（獨家兩段式玩法）</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">
+            ★ 神操作玩法：<br>
+            1. 17:00 先上 12F 拿「酪梨蝦仁可頌」配酒開胃 ➔ 2. 19:00 下樓吃晚餐 ➔ 3. <span class="hl">19:30-20:00 餐後立刻回 12F，趁 20:00 收餐檯前將喜歡的酒杯與調酒在桌上「裝好裝滿」</span> ➔ 4. 20:00-21:00 常溫蔥麵包與綜合堅果不會收，優雅在星空窗邊品飲到 21:00！
+          </div>
+        </div>
+
+        <h3>🍷 網友最愛 20 款美酒與特調清單</h3>
+        <div class="item-row">
+          <div class="item-header"><span>頂級日本清酒與特色梅酒區</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">
+            ★ 網友狂推：<span class="hl">★「獺祭純米大吟釀 45」</span>（冰桶全程冰鎮）、<span class="hl">★「PLUMATE 凍頂烏龍茶梅酒」</span>（秘訣：<span class="hl">跟管家索取「陶土杯與燙酒壺」溫熱喝</span>，冷天超暖身！）、日本柚子清酒、台灣精釀啤酒。
+          </div>
+        </div>
+        <div class="item-row">
+          <div class="item-header"><span>經典烈酒、氣泡酒與紅白酒</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">龐貝藍鑽琴酒、瑞典 ABSOLUT 伏特加、金快活龍舌蘭、西班牙皇家金色香檳氣泡酒、精選白酒與橡木桶紅葡萄酒。</div>
+        </div>
+        <div class="item-row">
+          <div class="item-header"><span>微醺花祭（MU 獨家浪漫花系酒 6 款）</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">扶桑花氣泡酒（7%）、普羅旺斯薰衣草淡酒（8.5%）、花自慢純米清酒、櫻化紀州梅酒、義大利玫瑰佛手柑利口酒、接骨木花香甜酒。</div>
+        </div>
+        <div class="item-row">
+          <div class="item-header"><span>智能觸控調酒（調酒機現點現做 12 款）</span><span class="tag-free">房客免費</span></div>
+          <div class="item-desc">
+            ★ 網友推薦必喝：<span class="hl">★「蘭陽夜沐」</span>（蘭姆酒＋黑面蔡黑牌楊桃汁＋蜂蜜檸檬，在地風味十足！）、熱情伯爵、伯爵蔓露、琥珀冬釀。<br>
+            ★ 無酒精推薦：<span class="hl">★「凝玉荔青茶」</span>（高山青茶＋荔枝＋氣泡水）、蜜沐切晴、優酪沙瓦、青檸微露。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 全館美食 -->
+    <div id="tab-dining" class="tab-content">
+      <div class="info-box">
+        <strong>🏢 餐廳位置提醒：</strong>全館餐飲設施皆位於馬路對面的 <strong>【酒店棟（本館）】</strong>，過街步行僅需 1 分鐘。
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          🍽️ 1. MU TABLE 自助百匯餐廳 (酒店棟2F)
+          <span class="live-status" id="status-mutable"></span>
+        </div>
+        <p>擁有 350 坪寬敞空間，提供極受好評的早餐與晚餐饗宴！</p>
+        
+        <!-- 📞 iPhone 一鍵直撥餐廳 -->
+        <a href="tel:039058000,5716" class="tel-call-btn" onclick="triggerHaptic('strong')">
+          📞 點擊一鍵直撥 MU TABLE 訂位（接通自動代撥分機 5716）
+        </a>
+
+        <h3>🍳 自助早餐 (07:00 - 11:00) ｜ 超狂改裝「朝食七選」</h3>
+        <p><span class="tag-free">專案已含・房客免費</span> <strong>★ 免排隊吃遍宜蘭排隊名店（2026年最新定價每位 NT$980，住房專案全包，價值感破表！）：</strong></p>
+        
+        <div class="alert-box" style="margin: 8px 0;">
+          <strong>⚠️ 12/6 (週日) 早餐避開排隊尖峰指南：</strong><br>
+          週日早晨為全館退房與住房人流最高峰，<span class="hl">「08:30 - 09:40」為門口排隊最長時段</span>！<br>
+          • <strong>極力推薦最佳時段</strong>：<span class="hl">08:00 前進場</span>（完全免排隊，勝手丼鮭魚卵與甜蝦最新鮮、餐檯最齊全）。<br>
+          • <strong>次佳時段</strong>：<span class="hl">09:45 後進場</span>（大批退房客人已離場，可悠閒慢慢享用至 11:00）。
+        </div>
+
+        <ol>
+          <li><span class="hl">【阿娘給的蒜味肉羹】</span>（蒜香濃郁、肉羹超Q彈，早餐吃一碗全身發暖，必拿！）</li>
+          <li>【復興路古早味炸醬麵】（經典名店寬麵，鹹香入味）</li>
+          <li>【三源行魚鬆蒸米糕】（宜蘭名產百年老店，手工米糕淋肉燥超香）</li>
+          <li>【利隆食品手工包子饅頭】（老字號手工麵香，自然Q彈）</li>
+          <li><span class="hl">【蘭陽煙燻鴨賞現煎蛋餅】</span>（寒沐主廚創意將鴨賞裹入現煎蛋餅，必加醬油膏！）</li>
+          <li>【礁溪老街扁食餛飩湯】（皮薄餡滿，高湯清甜）</li>
+          <li><span class="hl">【勝手丼飯（海鮮丼無限制）】</span>（👑 <strong>網友傳授最狂「寒沐痛風吃法」</strong>：餐檯備有大缸鮭魚卵與甜蝦，大家都是<span class="hl">「白飯只裝兩口，剩下全部鋪滿甜蝦與 4 大匙鮭魚卵」</span>自製奢華海鮮丼，爽度破表！）</li>
+        </ol>
+        <p>★ 早餐加碼：現切低溫爐烤牛排、維吉尼亞火腿、<span class="hl">現沖溫體牛肉湯</span>、熟成和牛咖哩飯、現做歐姆蛋。</p>
+
+        <h3>🦞 自助晚餐 (18:00 - 21:00)</h3>
+        <div class="item-list">
+          <div class="item-row" style="border-bottom: none; padding-bottom: 0;">
+            <div class="item-header">
+              <span>自助晚餐 (18:00 - 21:00)</span>
+              <span class="tag-charge">需自費：房客折後實收 NT$ 1,501 / 每位成人</span>
+            </div>
+            <div class="item-desc">
+              原價為成人 NT$ 1,580 + 10%（合計 NT$ 1,738）。<br>
+              專案房客享有特別優惠：原價 85 折 + 原價 10% 服務費，<span class="hl">【確切實收 NT$ 1,501 / 每位成人】</span>，兒童 6–12 歲為 <span class="hl">NT$ 751 / 位</span>（結帳出示房卡核銷）。<br>
+              <strong style="color:var(--accent);">💡 五人用餐特別預約提醒：</strong>官網系統備註4位以上可能會分桌。致電訂位時請務必強調「我們有5位，希望能排在同一張大長桌/圓桌」，確保全家人坐在一起。
+            </div>
+          </div>
+        </div>
+
+        <div class="alert-box" style="margin-top: 8px;">
+          <strong>⚠️ 12月週末晚餐極度熱門・防雷警告：</strong><br>
+          12 月適逢大旺季加上冬季松葉蟹與海膽暢吃。<span class="hl">強烈建議最晚於出發前 3 天致電餐廳</span>（03-905-8000）預定好 <span class="hl">「第一梯次 (17:30 - 19:20)」</span> 或 <span class="hl">「第二梯次 (19:40 - 21:30)」</span>分流（預留20分鐘全場清消），切勿當天進房才訂，避免現場排隊挨餓！
+        </div>
+
+        <p style="margin-top: 10px;"><strong>★ 網友晚餐必攻冬季狂熱：</strong></p>
+        <ul>
+          <li><span class="hl">【現蒸松葉蟹腳】</span>（肉質飽滿附剪刀，狂嗑松葉蟹腳配生啤酒超享受！）</li>
+          <li><span class="hl">【12月晚餐限定：奢華海膽軍艦壽司】</span>（冬季極致美味，海膽鮮甜入口即化！）</li>
+          <li>熱點不容錯過：三點蟹、現煎肋眼牛排、炙燒干貝握壽司、現炸黃金鮮蚵、三星蔥牛肉。</li>
+          <li>獨立甜點櫃超過 20 款法式甜點、Häagen-Dazs、Mövenpick 雙牌冰淇淋，以及生啤酒無限暢飲；設有低矮兒童取餐檯可領代幣玩扭蛋機！</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🍽️ 2. 大廳酒吧 ＆ 沐選烘焙 (酒店棟1F)</div>
+        <p><strong>🍹 MU BAR 大廳酒吧 (10:00 - 22:00)：</strong><br>
+          ★ 網友宵夜之王：<span class="hl">「主廚經典紅燒牛肉麵」</span>：<span class="tag-charge">需自費：NT$ 580+10%</span>（湯頭濃郁、牛肉厚實大塊附酸菜，不吃會遺憾！）。</p>
+        <p><strong>🥖 MUMU 沐選烘焙坊 (10:30 - 19:00)：</strong><br>
+          ★ 秒殺伴手禮：每日出爐即秒殺的「蘭陽三星蔥麵包」、爆漿生甜甜圈。<br>
+          <span class="tag-charge">需自費：房客憑房卡享 9 折優惠</span> 房客購買烘焙及指定禮盒享 9 折特惠。
+        </p>
+      </div>
+    </div>
+
+    <!-- TAB 4: 核心設施 -->
+    <div id="tab-facilities" class="tab-content">
+      <div class="card">
+        <div class="card-title">🏊 全館核心休閒設施</div>
+
+        <div class="building-title">🏢 【行館棟設施】（您入住的這棟・搭電梯下樓直達）</div>
+        <div class="item-row">
+          <div class="item-header">
+            <span>【⭐️網友激推必去】光之湯 (日式露天男女裸湯)</span>
+            <span class="tag-free">房客免費</span>
+            <span class="live-status" id="status-guangzhitang"></span>
+          </div>
+          <div class="item-sub">行館 1F ｜ 07:00-11:30 ｜ 14:00-22:00 (最後入場 21:30)</div>
+          <div class="item-desc">
+            純日式半露天碳酸氫鈉泉。周圍造景優美、池中造霧盆景宛如日本箱根！男湯女湯晨昏交換（推薦早晚各泡一次）。<br>
+            • 全裸入池禁穿泳衣泳帽。禁帶手機相機。<br>
+            • <span class="hl">男湯、女湯各有限額 20 人上限規章</span>。長髮者<span class="hl">必須用髮圈將長髮盤起</span>（無須配戴泳帽）。<br>
+            • 兒童身高未滿 95cm 嚴禁入場；95-140cm 需同性別家長陪同。<br>
+            • <strong>週二上午休館（本次六到一入住完全不受影響）</strong>。<br>
+            • <strong style="color:var(--accent);">❄️ 12月冬季防寒神招：</strong>更衣室到露天池有 3-5 公尺石板路風大極冷。<span class="hl">強烈推薦：先在室內烤箱預熱 3 分鐘，或在更衣室用大浴巾包緊走至池邊再解開！</span> 池邊備有熱薑茶，泡湯前後喝一杯極暖身！
+          </div>
+        </div>
+
+        <div class="building-title">🏢 【酒店棟／本館設施】（過馬路對面・步行 1 分鐘）</div>
+        <div class="item-row">
+          <div class="item-header">
+            <span>戶外溫水游泳池 (冬天溫水恆溫)</span>
+            <span class="tag-free">房客免費</span>
+            <span class="live-status" id="status-swim"></span>
+          </div>
+          <div class="item-sub">酒店棟 6F ｜ 07:00-22:00</div>
+          <div class="item-desc">恆溫泳池 12 月冬天依然溫暖，遠眺蘭陽山色。需穿標準泳裝及戴泳帽。<br>
+          • <strong>⚠️ 泳衣防踩雷：</strong><span class="hl">嚴禁穿著有任何金屬拉鍊、鈕扣或牛仔材質之泳裝下水</span>。<br>
+          • <strong>水質清潔暫停時段</strong>：12:00-12:30、18:00-18:30 泳池與 SPA 池會進行清場，請主動避開。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>兒童戲水池 ＆ 彩虹滑水道</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 6F ｜ 07:00-22:00</div>
+          <div class="item-desc">水深 45cm 溫水池，設有鯨魚噴水裝置與戶外彩虹滑水道（限 10 歲以下、身高 116-149cm 使用）。嬰幼兒需穿防水尿布。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>綜合溫泉 SPA 水療池 (冷熱多溫度)</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 6F ｜ 07:00-22:00</div>
+          <div class="item-desc">規劃 36℃ 至 42℃ 多功能高壓 SPA 水柱按摩池，舒壓度完美。需著泳裝與泳帽。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>【親子最愛】樂未央室內遊戲區 (草皮迷宮)</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 1F ｜ 07:00-22:00</div>
+          <div class="item-desc">136 坪綠色草皮、手工編織網迷宮、滑梯、木頭火車玩具與童書。<strong>大人小孩入場皆需脫鞋著襪（大人襪子別忘囉！若忘記帶，櫃檯有專門販售）</strong></div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>電競遊樂室 (PS4/PS5 & Switch)</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 1F ｜ 09:00-22:00</div>
+          <div class="item-desc">配備方向盤賽車模擬桶椅與 4 台任天堂 Switch 主機。每次限時 15 分鐘（無人排隊可續玩）。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header">
+            <span>小小賽車手電動車跑道</span>
+            <span class="tag-free">房客免費</span>
+            <span class="live-status" id="status-racer"></span>
+          </div>
+          <div class="item-sub">酒店棟 1F ｜ 08:30-10:30 ｜ 14:30-17:00</div>
+          <div class="item-desc">賓士、BMW 兒童電動車與迷你重機，家長可在旁以遙控器操作。限重 30kg 以下，每次 5 分鐘。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>樂未央戶外綜合運動場</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 1F 戶外 ｜ 07:00-22:00</div>
+          <div class="item-desc">推桿高爾夫、棒球與籃球九宮格、射箭練習場與鞦韆。可向櫃檯免費借用器材。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>專業健身房</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">酒店棟 6F ｜ 07:00-22:00</div>
+          <div class="item-desc">配備 Technogym 頂級跑步機與重訓器材。限 16 歲以上使用，須穿運動服與運動鞋。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: 館內活動 -->
+    <div id="tab-diy" class="tab-content">
+      <div class="card">
+        <div class="card-title">🎨 館內活動與自費項目明細</div>
+        <div class="item-row">
+          <div class="item-header"><span>🚲 官方免費禮遇：自行車 / 電助車免費借用</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">地點：行館棟 1F 服務中心 Concierge ｜ 每日開放</div>
+          <div class="item-desc">服務中心備有<span class="hl">自行車與電動輔助自行車供房客免費登記借用</span>！傍晚吹著宜蘭微涼山風，騎車去湯圍溝溫泉公園散步、或去奕順軒買伴手禮只需 3 分鐘車程，極為方便愜意！</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>🎄 12月冬季限定：酒店大廳聖誕點燈拍照區</span><span class="tag-free">房客免費拍照</span></div>
+          <div class="item-sub">地點：酒店棟（本館）1F 大廳 ｜ 全日點燈</div>
+          <div class="item-desc">12 月聖誕節前夕，本館大廳會打造極度夢幻的 <span class="hl">「巨型璀璨聖誕樹與薑餅屋點燈打卡區」</span>，音樂充滿節慶感，記得帶家人過馬路到本館大廳拍全家福留念！</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>館內季節手作 DIY ＆ 迎賓小點</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">地點：酒店棟 1F 大廳 / 樂未央 ｜ 14:00 - 16:30</div>
+          <div class="item-desc">提供 12 月聖誕節慶親子手作 DIY。★ 💡 預約大推：<span class="hl">13:00 辦理入住時先在 12 樓向管家或樂未央預約登記名額</span>，以免客滿！</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>草原 FUN 電影</span><span class="tag-free">房客免費</span></div>
+          <div class="item-sub">地點：酒店棟 1F 樂未央大草皮 ｜ 晚間放映</div>
+          <div class="item-desc">大草皮上放映熱門親子動畫電影，泡完晚湯後可以帶全家人來草皮吹涼風放鬆觀看。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>MUMU沐選：世界冠軍磨豆機 DIY 手沖咖啡體驗</span><span class="tag-charge">需自費：NT$ 220 / 次</span></div>
+          <div class="item-sub">地點：酒店棟 1F 沐選 ｜ 10:30 - 19:00</div>
+          <div class="item-desc">體驗使用咖啡界的世界冠軍磨豆機，親手沖煮出一杯香氣濃郁的客製化手沖溫暖咖啡。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>室內 3D 高爾夫球揮桿模擬器</span><span class="tag-charge">需自費：30分$400 ｜ 1小時$680</span></div>
+          <div class="item-sub">地點：酒店棟 1F (MU BAR 旁) ｜ 07:00 - 22:00</div>
+          <div class="item-desc">
+            百萬級擬真室內 3D 高爾夫球模擬，冬天也能在室內切磋。<span class="hl">確切收費：30分鐘 NT$ 400 ｜ 1小時 NT$ 680</span>（免費提供公用球桿）。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>VALMONT SPA 瑞士頂級芳療</span><span class="tag-charge">需自費：80分鐘約 NT$ 4,800+10% 起</span></div>
+          <div class="item-sub">地點：酒店棟 6F 會館旁 ｜ 13:00 - 22:00 (最後收客 20:30)</div>
+          <div class="item-desc">引進瑞士著名的頂級皇室護膚品牌 VALMONT，提供深層背部/經絡放鬆與臉部保養課程（限 16 歲以上）。</div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-header"><span>24 小時自助洗衣房</span><span class="tag-charge">需自費：洗衣$50 ｜ 烘衣$50</span></div>
+          <div class="item-sub">地點：酒店棟 5F ｜ 24 小時開放</div>
+          <div class="item-desc">滾筒洗衣機（NT$ 50/次）、烘衣機（NT$ 50/次）與洗衣粉販賣機（NT$ 10/包），玩水或泡湯後可隨時處理泳衣與衣物。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: 礁溪周邊 (類別精確修正 ＆ iOS 搜尋列版) -->
+    <div id="tab-local" class="tab-content">
+      <div class="card">
+        <div class="card-title">🗺️ 礁溪寒沐周邊黃金美食與景點</div>
+        
+        <!-- 🎛️ 智慧篩選與排序面板 -->
+        <div class="filter-panel">
+          <!-- 🔍 iOS 毛玻璃即時搜尋列 -->
+          <div class="ios-search-wrapper">
+            <span class="ios-search-icon">🔍</span>
+            <input type="text" id="localSearchInput" class="ios-search-input" placeholder="快速搜尋美食、景點、路名 (例: 臭豆腐、鴨、拉麵)..." oninput="handleSearchInput()" autocomplete="off" autocorrect="off" spellcheck="false">
+            <button class="ios-search-clear" id="searchClearBtn" onclick="clearLocalSearch()" title="清除">⨂</button>
+          </div>
+          <div class="filter-section-title">
+            <span>🏷️ 依類別篩選：</span>
+            <span class="results-count" id="placesCount">顯示全部 26 處</span>
+          </div>
+          <div class="filter-pills" id="categoryPills">
+            <button class="filter-pill active" onclick="setCategoryFilter('all', this)">全部 (26)</button>
+            <button class="filter-pill" onclick="setCategoryFilter('viral', this)">🔥 爆紅必吃</button>
+            <button class="filter-pill" onclick="setCategoryFilter('dessert', this)">🍮 甜點甜湯</button>
+            <button class="filter-pill" onclick="setCategoryFilter('supper', this)">🍢 散步宵夜</button>
+            <button class="filter-pill" onclick="setCategoryFilter('souvenir', this)">🎁 名產伴手禮</button>
+            <button class="filter-pill" onclick="setCategoryFilter('spot', this)">🌳 漫步景點</button>
+          </div>
+
+          <div class="filter-section-title"><span>🔄 依需求排序：</span></div>
+          <div class="sort-group">
+            <button class="sort-btn active" id="sort-default" onclick="setSortMode('default', this)">🌟 精選推薦</button>
+            <button class="sort-btn" id="sort-dist" onclick="setSortMode('distance', this)">👣 距離最近</button>
+            <button class="sort-btn" id="sort-time" onclick="setSortMode('time', this)">🌙 營業最晚</button>
+          </div>
+        </div>
+
+        <div class="info-box" style="background:#eef5fc; border-left-color:#4285f4; margin-bottom:18px;">
+          <strong>☔ 雨具與飲水叮嚀：</strong>兩棟 1F 大門皆備有「寒舍愛心雨傘」供免費借用；需大容量熱水可至酒店棟 5F 洗衣房大型飲水機盛裝。
+        </div>
+
+        <!-- 景點與美食卡片清單容器 -->
+        <div id="localCardsContainer">
+
+          <!-- 1. 玉里橋頭臭豆腐 -->
+          <div class="local-card" data-cat="viral" data-dist="10" data-close="21.0" data-order="1">
+            <div class="local-card-header">
+              <span class="local-title">👑 玉里橋頭臭豆腐（礁溪旗艦店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">🚗 車程 4 分</span>
+                <span class="local-time-badge">至 21:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">全台臭豆腐界無冕之王！</span>花蓮排隊傳奇礁溪直營。外皮酥脆像千層餅乾，裡面飽含多汁。每盤鋪滿<b>「白蘿蔔絲 ＋ 九層塔 ＋ 泡菜」</b>黃金鐵三角，醬汁吸飽飽！<br>
+              ★ 攻略：只收現金、不可訂位。現場抽號碼牌，建議大份共享。外帶回房配冰啤酒極享受。<br>
+              ★ 營業時間：13:00 - 21:00 (售完為止)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('玉里橋頭臭豆腐 礁溪旗艦店 宜蘭縣礁溪鄉礁溪路三段56號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路三段56號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 2. 阿亮烤肉 -->
+          <div class="local-card" data-cat="viral,supper" data-dist="5" data-close="25.5" data-order="2">
+            <div class="local-card-header">
+              <span class="local-title">🔥 阿亮烤肉（傳奇排隊消夜）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 5 分</span>
+                <span class="local-time-badge">至 01:30</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">礁溪街上最強燒烤！</span>排隊動輒 1～3 小時的都市傳說。先炸後烤，刷上特製秘傳鹹甜醬汁。三星蔥肉捲、烤雞腿、甜不辣、櫛瓜香濃不乾死鹹。<br>
+              ★ <strong style="color:var(--charge-bg);">🚨 防空等秘訣：</strong>17:00 開攤即衝去夾料拿號碼牌，夾完直接回飯店泡溫泉，時間到了再下樓取餐！<br>
+              ★ 營業時間：17:00 - 01:30 (週二公休)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('阿亮烤肉 宜蘭縣礁溪鄉中山路二段64號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉中山路二段64號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 3. 樂山溫泉拉麵 -->
+          <div class="local-card" data-cat="viral" data-dist="4" data-close="21.0" data-order="3">
+            <div class="local-card-header">
+              <span class="local-title">♨️ 樂山溫泉拉麵（露天泡腳吃拉麵）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 21:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">全台獨創！邊泡溫泉足湯邊吃熱騰騰拉麵</span>。大推豚骨拉麵與厚切炸豬排，在 12 月微涼空氣中泡著足湯大口吃麵，身體瞬間發汗舒暢！<br>
+              ★ 攻略：足湯位有限（每人多付 15 元換毛巾與足湯座），下午 16:30 即有人排隊，想泡腳請提早卡位。<br>
+              ★ 營業時間：11:30-14:00, 17:00-21:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('樂山溫泉拉麵 宜蘭縣礁溪鄉礁溪路五段108巷1號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段108巷1號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 4. 里海咖啡 -->
+          <div class="local-card" data-cat="viral" data-dist="12" data-close="20.5" data-order="4">
+            <div class="local-card-header">
+              <span class="local-title">🐟 里海咖啡（鮮魚定食天天板）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">🚗 車程 5 分</span>
+                <span class="local-time-badge">至 20:30</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">礁溪正餐封神之作！Google 4.6星破4000則好評。</span>每日漁港直送「現流鮮魚定食始祖」（烤紅喉、鹽烤海鱺、赤鯮）。日式木造庭院環境清雅，長輩絕對滿意。<br>
+              ★ 攻略：<strong style="color:var(--charge-bg);">沒預約絕對吃不到！</strong> 請務必提前線上預訂。<br>
+              ★ 營業時間：11:30-16:00, 17:30-20:30 (週三公休)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('里海咖啡 宜蘭縣礁溪鄉玉龍路二段406號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉玉龍路二段406號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 5. 礁溪香腸伯 -->
+          <div class="local-card" data-cat="viral" data-dist="10" data-close="18.0" data-order="5">
+            <div class="local-card-header">
+              <span class="local-title">🌭 礁溪香腸伯（炭烤潤餅大腸包小腸）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">🚗 車程 4 分</span>
+                <span class="local-time-badge">至 18:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 跑馬古道口排隊神攤！<span class="hl">最猛吃法：現烤香腸+米腸用潤餅皮包起來</span>，夾滿特製辣菜脯、大蒜、香菜，大口咬下層次豐富，炭火香氣爆表！<br>
+              ★ 營業時間：10:00 - 18:00 (售完為止)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('礁溪香腸伯 宜蘭縣礁溪鄉大忠路跑馬古道口')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉大忠路跑馬古道口', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 6.  陳旺記鴉片飯 -->
+          <div class="local-card" data-cat="viral" data-dist="6" data-close="19.5" data-order="6">
+            <div class="local-card-header">
+              <span class="local-title">🦆 陳旺記鴉片飯（高CP爆紅小吃）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 6 分</span>
+                <span class="local-time-badge">至 19:30</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 銅板價美食！白飯鋪滿鮮嫩鴨肉絲，淋上超濃醇醬香鴨油，讓人欲罷不能。當歸羊肉湯與滷大腸同樣必點。<br>
+              ★ 營業時間：11:00-14:00, 16:30-19:30 (週四公休)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('陳旺記鴉片飯 宜蘭縣礁溪鄉德陽路30號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路30號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 7. 柯氏蔥油餅 ＆ 吳記花生捲冰淇淋 -->
+          <div class="local-card" data-cat="viral,supper" data-dist="8" data-close="18.0" data-order="7">
+            <div class="local-card-header">
+              <span class="local-title">🍳 柯氏蔥油餅 ＆ 吳記花生捲冰淇淋</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 8 分</span>
+                <span class="local-time-badge">至 18:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">現做現吃排隊神話（非伴手禮）！</span>柯氏蔥油餅厚實蓬鬆像現炸麵包，三星蔥爆汁；隔壁吳記現刨花生糖沙包入雙球冰淇淋與香菜，鹹甜交織，買完站在路邊趁熱吃最過癮！<br>
+              ★ 營業時間：09:00 - 18:00 (售完為止)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('柯氏蔥油餅 宜蘭縣礁溪鄉礁溪路四段128號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路四段128號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 8. 奶油麵包 -->
+          <div class="local-card" data-cat="viral,dessert" data-dist="6" data-close="18.0" data-order="8">
+            <div class="local-card-header">
+              <span class="local-title">🥐 奶油麵包（歐風九宮格小餐包）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 6 分</span>
+                <span class="local-time-badge">至 18:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 南法鄉村風高質感烘焙房。招牌現烤「九宮格奶油小餐包」、香濃肉桂捲外酥內軟，奶香濃郁。帶一盒回房搭咖啡是絕配下午茶。<br>
+              ★ 營業時間：10:00 - 18:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('奶油麵包 礁溪旗艦店 宜蘭縣礁溪鄉礁溪路六段35號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路六段35號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 9. 魏姐包心粉圓 -->
+          <div class="local-card" data-cat="dessert" data-dist="4" data-close="23.0" data-order="9">
+            <div class="local-card-header">
+              <span class="local-title">🍧 魏姐包心粉圓（礁溪旗艦店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 23:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">全礁溪開最晚的名牌甜品（至 23:00）！</span>泡完溫泉最享受的暖胃聖品。<br>
+              ★ 必點：<b>包心芝奶豆花（熱/冰）</b>、<b>包心桂圓紫米粥（熱）</b>、包心燒仙草。外帶粉圓與豆花分開裝，帶回望岳閣依然滾燙彈牙！<br>
+              ★ 營業時間：11:00 - 23:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('魏姐包心粉圓 礁溪店 宜蘭縣礁溪鄉礁溪路五段35號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段35號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 10. 秀圓豆花 -->
+          <div class="local-card" data-cat="dessert" data-dist="4" data-close="22.0" data-order="10">
+            <div class="local-card-header">
+              <span class="local-title">🥣 秀圓豆花（古早味老薑汁豆花）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 22:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 在地人從小吃到大的古早味老字號！傳統柴燒手工豆花、古法熱燒仙草。<br>
+              ★ 冬天必嚐：<b>「老薑汁番薯熱豆花」</b>，辣香濃郁的老薑糖水淋在綿密豆花上，暖身驅寒第一名。<br>
+              ★ 營業時間：12:00 - 22:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('秀圓豆花 宜蘭縣礁溪鄉德陽路88號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路88號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 11. 白水豆花 -->
+          <div class="local-card" data-cat="dessert" data-dist="4" data-close="20.0" data-order="11">
+            <div class="local-card-header">
+              <span class="local-title">🍮 白水豆花（日式鹽滷桃膠豆花）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 20:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 礁溪人氣最高的網美甜品！手工鹽滷豆花上現刨麥芽糖花生粉與翠綠香菜（液體花生捲冰淇淋）。<br>
+              ★ <strong style="color:var(--charge-bg);">🚨 外帶防雷：</strong>店家環保「不提供一次性容器」，想外帶回房請自備保鮮盒。<br>
+              ★ 營業時間：12:00 - 20:00 (週四公休，售完提早打烊)
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('白水豆花 宜蘭縣礁溪鄉德陽路68號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路68號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 12. 宜蘭滷之鄉 -->
+          <div class="local-card" data-cat="supper" data-dist="4" data-close="23.0" data-order="12">
+            <div class="local-card-header">
+              <span class="local-title">🦆 宜蘭滷之鄉（冰釀鴨肉名店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 23:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">深夜下酒菜首選（即食冷盤，非乾貨伴手禮）！</span>中藥古法冰釀。<br>
+              ★ 必買：<b>冰釀鴨翅、去骨鴨腿、鴨舌、脆腸</b>。整櫃低溫冷藏開袋即食、不需加熱，骨肉鮮香，買回望岳閣客廳配 Mini Bar 啤酒極其對味！<br>
+              ★ 營業時間：10:00 - 23:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('宜蘭滷之鄉 礁溪旗艦店 宜蘭縣礁溪鄉礁溪路五段69號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段69號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 13. 鴨喜露 -->
+          <div class="local-card" data-cat="supper" data-dist="5" data-close="20.0" data-order="13">
+            <div class="local-card-header">
+              <span class="local-title">🥩 鴨喜露（煙燻骨頭下酒滷味）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 5 分</span>
+                <span class="local-time-badge">至 20:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">礁溪最狂現吃煙燻滷味（非帶回台北之密封伴手禮）！</span><br>
+              ★ 招牌：煙燻鴨骨頭、鴨胸骨、豬尾巴、大腸頭，越啃越香。非常適合買一袋回望岳閣客房，當作晚上開 Switch、聊天喝啤酒的現吃下酒菜！<br>
+              ★ 營業時間：10:00 - 20:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('鴨喜露 礁溪店 宜蘭縣礁溪鄉溫泉路34號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉溫泉路34號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 14. 阿和烤肉 -->
+          <div class="local-card" data-cat="supper" data-dist="5" data-close="25.0" data-order="14">
+            <div class="local-card-header">
+              <span class="local-title">🍢 阿和烤肉（炭烤＋鹽酥炸物雙拼）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 5 分</span>
+                <span class="local-time-badge">至 01:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 與阿亮烤肉齊名的在地宵夜天王！主打「炭烤串燒與鹽酥炸物一攤搞定」。<br>
+              ★ 必點：烤甜不辣、碳烤三星蔥肉串、鹽酥雞、炸花枝酥。中藥胡椒鹽鹹甜誘人。<br>
+              ★ 營業時間：19:00 - 凌晨 01:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('阿和烤肉 宜蘭縣礁溪鄉中山路二段134號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉中山路二段134號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 15. 買醉串燒 -->
+          <div class="local-card" data-cat="supper" data-dist="3" data-close="26.0" data-order="15">
+            <div class="local-card-header">
+              <span class="local-title">🍺 買醉串燒酒場 / 亀居酒屋</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 3 分</span>
+                <span class="local-time-badge">至 02:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 烤剝皮辣椒牛、三星蔥肉串、生啤酒。營業到凌晨 01:00 - 02:00。酒廊 21:00 關門後，下樓續攤喝一杯的首選。<br>
+              ★ 營業時間：18:00 - 凌晨 02:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('買醉串燒酒場 宜蘭縣礁溪鄉溫泉路53號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉溫泉路53號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 16. 八寶冬粉 -->
+          <div class="local-card" data-cat="supper" data-dist="5" data-close="25.0" data-order="16">
+            <div class="local-card-header">
+              <span class="local-title">🍲 八寶冬粉（台灣百大名店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 5 分</span>
+                <span class="local-time-badge">至 01:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ 德陽宮旁，高湯清甜，內含肉羹、花枝、蝦仁等八種澎湃配料。營業到凌晨 01:00，泡完晚湯暖胃熱湯首選。<br>
+              ★ 營業時間：06:00 - 凌晨 01:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('玉仁八寶冬粉 宜蘭縣礁溪鄉中山路二段131號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉中山路二段131號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 17. 貴族派脆皮炸雞 -->
+          <div class="local-card" data-cat="supper" data-dist="4" data-close="23.5" data-order="17">
+            <div class="local-card-header">
+              <span class="local-title">🍗 貴族派脆皮炸雞（礁溪店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 23:30</span>
+              </div>
+            </div>
+            <p class="local-desc">宜蘭傳奇脆皮雞排！外皮像餅乾般酥脆多汁，買回房間配電視與冰飲超過癮。<br>★ 營業時間：14:00 - 23:30</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('貴族派脆皮炸雞 礁溪店 宜蘭縣礁溪鄉德陽路28號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路28號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 18. 正常鮮肉小籠湯包 -->
+          <div class="local-card" data-cat="supper" data-dist="2" data-close="19.5" data-order="18">
+            <div class="local-card-header">
+              <span class="local-title">🥟 正常鮮肉小籠湯包（礁溪店）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 2 分</span>
+                <span class="local-time-badge">至 19:30</span>
+              </div>
+            </div>
+            <p class="local-desc">現點現蒸！皮薄如紙，一口咬下滿溢三星蔥的鮮甜爆汁。<br>★ 營業時間：06:30 - 13:00, 15:30 - 19:30（週日休）</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('正常鮮肉小籠包 礁溪店 宜蘭縣礁溪鄉德陽路1號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路1號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 19. 添喜海鮮小吃館 -->
+          <div class="local-card" data-cat="supper" data-dist="5" data-close="20.5" data-order="19">
+            <div class="local-card-header">
+              <span class="local-title">🐟 添喜海鮮小吃館（現撈熱炒）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 5 分</span>
+                <span class="local-time-badge">至 20:30</span>
+              </div>
+            </div>
+            <p class="local-desc">平價熱炒首選，大推清蒸現流時魚、炒臭豆腐、涼拌雙蛋。平價實惠、份量豪爽。<br><strong style="color:var(--charge-bg);">🚨 注意：週一公休！</strong>建議排在 Day 1 週六或 Day 2 週日去吃。<br>★ 營業時間：11:00-14:00, 17:00-20:30</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('添喜海鮮小吃 宜蘭縣礁溪鄉德陽路79號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路79號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 20. 礁溪排骨麵 -->
+          <div class="local-card" data-cat="supper" data-dist="4" data-close="20.0" data-order="20">
+            <div class="local-card-header">
+              <span class="local-title">🍜 礁溪排骨麵（懷舊老字號）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 20:00</span>
+              </div>
+            </div>
+            <p class="local-desc">排骨酥蒸到軟糯骨肉分離，古早味紅蔥頭高湯，懷舊人氣老字號。<br>★ 營業時間：11:00 - 20:00</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('礁溪排骨麵 宜蘭縣礁溪鄉中山路二段117號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('礁溪排骨麵 宜蘭縣礁溪鄉中山路二段117號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 21. 老將自助餐 -->
+          <div class="local-card" data-cat="supper" data-dist="8" data-close="29.0" data-order="21">
+            <div class="local-card-header">
+              <span class="local-title">🍚 老將自助餐（深夜清粥小菜食堂）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">🚗 車程 3 分</span>
+                <span class="local-time-badge">至 05:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">全礁溪開最晚的傳奇食堂（開到凌晨 05:00）！</span><br>
+              ★ 必吃：白灼骨邊肉、清蒸鱸魚、古早味紅燒爌肉飯、熱地瓜粥。半夜肚子餓想吃熱飯熱菜的唯一解！<br>
+              ★ 營業時間：17:00 - 凌晨 05:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('老將自助餐 宜蘭縣礁溪鄉礁溪路二段128號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路二段128號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 22. 24H超商補給 -->
+          <div class="local-card" data-cat="supper" data-dist="1" data-close="30.0" data-order="22" style="background:var(--card-bg);">
+            <div class="local-card-header" style="margin-bottom:0;">
+              <span class="local-title">🏪 24H便利商店補給</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge" style="background:#555;">👣 步行 1 分</span>
+                <span class="local-time-badge" style="background:#2e7d32;">24 小時</span>
+              </div>
+            </div>
+            <p class="local-desc" style="margin-top:6px; margin-bottom:0;">出寒沐大門右轉，健康路與礁溪路交叉口即是 <strong>7-11（寒舍門市）</strong> 與 <strong>全家便利商店</strong>。</p>
+          </div>
+
+          <!-- 23. 奕順軒 (純伴手禮 No.1) -->
+          <div class="local-card" data-cat="souvenir" data-dist="4" data-close="21.5" data-order="23">
+            <div class="local-card-header">
+              <span class="local-title">👑 奕順軒（礁溪旗艦店・伴手禮首選）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 4 分</span>
+                <span class="local-time-badge">至 21:30</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">宜蘭名產伴手禮唯一指名！</span>適合買回台北送禮與自用。<br>
+              ★ 必買：香濃「神仙奶凍捲」、外酥內軟「三星蔥燒包」、拿破崙派、切達乳酪狀元餅。<br>
+              <span class="hl">💡 避擠神指南：</span>假日現場水洩不通！強烈建議安排在 <span class="hl">「Day 1 (六) 19:30 用餐後」</span> 或 <span class="hl">「Day 3 (一) 退房後」</span> 順路購買免排隊。<br>
+              ★ 營業時間：10:00 - 21:30
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('奕順軒 礁溪店 宜蘭縣礁溪鄉礁溪路五段96號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段96號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 24. 義珍香烘焙坊 (純伴手禮 No.2) -->
+          <div class="local-card" data-cat="souvenir" data-dist="8" data-close="21.0" data-order="24">
+            <div class="local-card-header">
+              <span class="local-title">🍞 義珍香烘焙坊（鮮奶吐司＆爆漿饅頭）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 8 分</span>
+                <span class="local-time-badge">至 21:00</span>
+              </div>
+            </div>
+            <p class="local-desc">
+              ★ <span class="hl">宜蘭烘焙界傳奇伴手禮！</span>全台聞名的人氣名產。<br>
+              ★ 必買招牌：不加一滴水、100% 鮮乳製作的<b>「純鮮奶吐司」</b>，以及咬下去內餡狂流的<b>「爆漿黑糖起司饅頭」</b>。常溫可帶回台北、冷凍保存，回烤超香！<br>
+              ★ 營業時間：09:00 - 21:00
+            </p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('義珍香烘焙坊 礁溪店 宜蘭縣礁溪鄉礁溪路四段161號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('義珍香烘焙坊 礁溪店 宜蘭縣礁溪鄉礁溪路四段161號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 25. 湯圍溝溫泉公園 -->
+          <div class="local-card" data-cat="spot" data-dist="3" data-close="24.0" data-order="25">
+            <div class="local-card-header">
+              <span class="local-title">♨️ 湯圍溝溫泉公園（12月限定溫泉燈花季）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 3 分</span>
+                <span class="local-time-badge">夜燈至 22:30</span>
+              </div>
+            </div>
+            <p class="local-desc">12 月夜間會點亮大規模奇幻流金的「礁溪溫泉燈花季」大型竹棚裝飾，過節氛圍拉滿。<br>★ 推薦：體驗公園內的「溫泉魚咬腳皮」（約 NT$60-80/位，附毛巾），看長輩腳底發癢笑哈哈極歡樂！<br>★ 全日開放（夜間燈花點燈至 22:30）</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('湯圍溝溫泉公園 宜蘭縣礁溪鄉德陽路99-11號')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉德陽路99-11號', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 26. 礁溪溫泉廣場 -->
+          <div class="local-card" data-cat="spot" data-dist="7" data-close="24.0" data-order="26">
+            <div class="local-card-header">
+              <span class="local-title">🦶 礁溪溫泉廣場（免費日式足湯）</span>
+              <div class="local-badge-wrap">
+                <span class="local-dist-badge">👣 步行 7 分</span>
+                <span class="local-time-badge">全日開放</span>
+              </div>
+            </div>
+            <p class="local-desc">備有寬敞木作的免費日式露天足湯與夜間燈飾裝飾，空間開闊，適合長輩白天或傍晚散步拍照泡腳。<br>★ 全日開放</p>
+            <div class="map-btn-group">
+              <button class="map-btn-action google-btn" onclick="openGoogleMap('礁溪溫泉廣場 宜蘭縣礁溪鄉礁溪路五段與溫泉路口')">🗺️ Google 地圖導航</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段與溫泉路口', this)">📋 複製地址</button>
+            </div>
+          </div>
+
+          <!-- 🔍 搜尋「無結果」空狀態提示元件（Empty State Feedback） -->
+          <div id="emptySearchNotice" class="empty-search-state">
+            🔍 找不到相符的美食或景點，請嘗試輸入其他關鍵字！
+          </div>
+
+        </div><!-- end localCardsContainer -->
+
+      </div>
+    </div>
+
+    <!-- TAB 7: 交通與防雷 -->
+    <div id="tab-tips" class="tab-content">
+      <div class="card" style="border: 1px solid #f2e3be; background-color: #fffaf0;">
+        <div class="card-title" style="color: #b08d57; border-bottom: 2px solid #b08d57;">🎟️ 三天兩夜大眾運輸交通備忘錄</div>
+        <div class="info-box" style="margin-top: 8px; background-color: #fcfbfa; border-left-color: #2e7d32;">
+          <strong>🚌 12/5 (六) 台北發車去程時間：</strong><br>
+          • <strong>發車時間：</strong><span class="hl">12:45 PM 準時發車</span>（逾時不候）
+          <button class="copy-btn" onclick="copyText('12:45 PM', this)">📋 複製時間</button><br>
+          • <strong>乘車地點：</strong><span class="hl" style="cursor:pointer; text-decoration:underline;" onclick="openGoogleMap('台北車站東三門')">台北火車站東三門</span>（請提早 10 分鐘抵達集合）
+          <button class="copy-btn" onclick="copyText('台北火車站東三門', this)">📋 複製地點</button><br>
+          • <span class="hl" style="color: #2e7d32;">💼 行李提送房特權：</span>在台北東三門上車時，行李員會核對姓名並接過大件行李。下車後您直接上 12 樓辦入住，<span class="hl">行李會由房務直達送進望岳閣房內</span>，全程免推免拉行李！
+        </div>
+
+        <div class="ticket-box" style="margin-top: 12px;">
+          <strong>🚂 12/7 (一) 完美返程台鐵車票資訊：</strong><br>
+          • <strong>車次班次：</strong><span class="hl">自強 (3000) 419 次</span>（新自強號，全車對號座，不發售無座/站票，回程極安靜舒適！）<br>
+          • <strong>乘車區間：</strong><span class="hl">15:09 礁溪發車 ➔ 16:20 抵達台北</span>
+          <button class="copy-btn" onclick="window.location.href='https://tip.railway.gov.tw/tra-tip-web/tip/box/single/liveTrain'">🔍 查詢火車即時誤點狀況</button><br>
+          • <strong>車廂座位：</strong><span class="hl" style="color: var(--charge-bg);">9 車 1, 2, 3, 4, 6, 8 號</span>（共 6 席）
+          <button class="copy-btn" onclick="copyText('9車 1, 2, 3, 4, 6, 8號', this)">📋 複製座位</button><br>
+          <span style="font-size: 0.8rem; color: var(--gray); display:block; margin-top:8px; line-height:1.5;">
+            <strong style="color:var(--charge-bg);">⚠️ 實戰防雷時間提醒：</strong>因行李寄放在行館，沖澡在酒店棟 6F。強烈推薦<span class="hl">提早於 14:15 - 14:30 結束玩水並開始沖澡</span>，14:45 回行館 1F 取行李，14:50 搭接駁車，14:55 從容抵達車站上車（新自強號 419 次 15:07 進站、15:09 準時發車）。
+          </span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🚌 專屬免費與收費接駁車指引</div>
+        <ul>
+          <li><strong>🚍 台北直達礁溪寒沐接駁巴士（去程）：</strong>
+            直達專車 12歲以上 NT$ 300/趟、7-12歲 NT$ 150/趟、6歲以下免費。<br>
+            • <span class="hl">最晚須於出發前一日 21:00 前完成官網線上預約</span>。</li>
+          <li><strong>🚍 礁溪市區免費定點接駁車（來回礁溪火車站）：</strong>
+            往返礁溪火車站與轉運站。<span class="hl">最晚必須在入住前一天（12/4 五）致電飯店預約</span>。
+            
+            <!-- 📞 iPhone 一鍵直撥服務中心 -->
+            <a href="tel:039058000,5821" class="tel-call-btn" onclick="triggerHaptic('strong')">
+              📞 點擊一鍵直撥服務中心預約接駁（接通自動代撥分機 5821）
+            </a>
+            <button class="copy-btn" onclick="copyText('039058000,5821', this)">📋 複製電話及分機</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">💡 行前必看 4 大避雷神攻略</div>
+        <div class="info-box">
+          <strong>1. 📅 跨平假日人潮「避擠神時段」：</strong><br>
+          • <strong>週六、日（假日尖峰）</strong>：親子設施大排長龍。<span class="hl">強烈建議將 1F 樂未央、小小賽車手排在「中午 12:30 抵達～15:00 進房前」</span>（舊旅客已退、新客未進，全館最空）！<br>
+          • <strong>週一（平日退房日特權）</strong>：退房後一路玩到 15:00。<span class="hl">此時 6F 溫水泳池與 SPA 水療池幾乎完全沒人</span>，包場悠閒游泳拍照！
+        </div>
+
+        <div class="info-box">
+          <strong>2. 🧳 退房日跨棟行李動線最佳化（大眾運輸專屬）：</strong><br>
+          退房當日 (12/7) 11:00 退房後玩到 15:00。<span class="hl">推薦動線：早上退房時行李直接寄放在「行館 1F 櫃檯」</span>，兩手空空只帶換洗衣物去酒店棟玩。15:00 在 6 樓洗好澡後，回行館大廳取行李，搭預約好的接駁車去火車站，完全不走回頭路！
+        </div>
+
+        <div class="info-box">
+          <strong>3. 🏊 週一退房後 6F 泳池「清潔暫停時段」防呆：</strong><br>
+          6F 戶外溫水泳池與 SPA 池在<span class="hl">每日中午 12:00 - 12:30 是例行水質維護清場時間</span>（暫停 30 分鐘）。<br>
+          <span class="hl">💡 避清場行程指南：</span>11:00 退房 ➔ 11:30~12:00 先去玩 1F 電競遊樂室或樂未央 ➔ 12:30 後再去 6 樓包場玩溫泉大泳池與溫泉 SPA 水療池，時間完全不重疊！
+        </div>
+
+        <div class="info-box">
+          <strong>4. 【神級特權】退房當日玩到 15:00 親子淋浴避堵神招：</strong><br>
+          若同行有小於 95 公分的幼童（光之湯有身高限制），<span class="hl">退房玩水後直接前往「本館 6 樓寒沐會館更衣室」</span>，無身高限制、空間大且備有脫水機與吹風機，洗好熱水澡神清氣爽去搭車！
+        </div>
+
+        <div class="info-box">
+          <strong>5. 行館裸湯防滑提醒：</strong><br>
+          行館 1F 光之湯地面為日式石材，溫泉水潤滑。<span class="hl">長輩或孩童泡湯時務必慢步前行、切勿奔跑</span>，避免滑倒摔傷！
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="back-to-top" id="backToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); triggerHaptic();" title="回到頂部">🔝</div>
+
+  <div class="bottom-tab-bar" id="bottomTabBar">
+    <button class="bottom-tab-item active btn-info" onclick="switchTab(event, 'tab-info')"><span class="icon">📌</span><span>訂房硬體</span></button>
+    <button class="bottom-tab-item btn-mutop" onclick="switchTab(event, 'tab-mutop')"><span class="icon">🥂</span><span>MU TOP</span></button>
+    <button class="bottom-tab-item btn-dining" onclick="switchTab(event, 'tab-dining')"><span class="icon">🍽️</span><span>全館美食</span></button>
+    <button class="bottom-tab-item btn-facilities" onclick="switchTab(event, 'tab-facilities')"><span class="icon">🏊</span><span>核心設施</span></button>
+    <button class="bottom-tab-item btn-diy" onclick="switchTab(event, 'tab-diy')"><span class="icon">🎨</span><span>活動DIY</span></button>
+    <button class="bottom-tab-item btn-local" onclick="switchTab(event, 'tab-local')"><span class="icon">🗺️</span><span>礁溪周邊</span></button>
+    <button class="bottom-tab-item btn-tips" onclick="switchTab(event, 'tab-tips')"><span class="icon">🚗</span><span>交通避雷</span></button>
+  </div>
+
+  <script>
+    // 📳 iOS 擬真觸覺回饋
+    function triggerHaptic(type) {
+      if (navigator.vibrate) {
+        navigator.vibrate(type === 'strong' ? [15, 30, 15] : 12);
+      }
+    }
+
+    // 🗺️ 喚醒 Google 地圖導航
+    function openGoogleMap(query) {
+      triggerHaptic();
+      window.location.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
+    }
+
+    // 🎛️ 周邊景點智慧篩選、排序 ＆ 即時搜尋
+    var currentCategory = 'all';
+    var currentSort = 'default';
+    var searchQuery = '';
+
+    function handleSearchInput() {
+      var input = document.getElementById('localSearchInput');
+      var clearBtn = document.getElementById('searchClearBtn');
+      searchQuery = input.value.trim().toLowerCase();
+      if (searchQuery.length > 0) {
+        clearBtn.style.display = 'block';
+      } else {
+        clearBtn.style.display = 'none';
+      }
+      applyFilterAndSort();
+    }
+
+    function clearLocalSearch() {
+      triggerHaptic();
+      var input = document.getElementById('localSearchInput');
+      var clearBtn = document.getElementById('searchClearBtn');
+      input.value = '';
+      searchQuery = '';
+      clearBtn.style.display = 'none';
+      applyFilterAndSort();
+      input.focus();
+    }
+
+    function setCategoryFilter(cat, btn) {
+      triggerHaptic();
+      currentCategory = cat;
+      var pills = document.querySelectorAll('.filter-pill');
+      for (var i = 0; i < pills.length; i++) {
+        pills[i].classList.remove('active');
+      }
+      btn.classList.add('active');
+      applyFilterAndSort();
+    }
+
+    function setSortMode(mode, btn) {
+      triggerHaptic();
+      currentSort = mode;
+      var btns = document.querySelectorAll('.sort-btn');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.remove('active');
+      }
+      btn.classList.add('active');
+      applyFilterAndSort();
+    }
+
+    function applyFilterAndSort() {
+      var container = document.getElementById('localCardsContainer');
+      var cards = Array.prototype.slice.call(container.querySelectorAll('.local-card'));
+      var emptyNotice = document.getElementById('emptySearchNotice');
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        var cat = card.getAttribute('data-cat') || '';
+        var cardText = card.innerText.toLowerCase();
+        var matchCat = (currentCategory === 'all' || cat.indexOf(currentCategory) !== -1);
+        var matchSearch = (searchQuery === '' || cardText.indexOf(searchQuery) !== -1);
+
+        if (matchCat && matchSearch) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      cards.sort(function(a, b) {
+        if (currentSort === 'distance') {
+          var distA = parseFloat(a.getAttribute('data-dist')) || 99;
+          var distB = parseFloat(b.getAttribute('data-dist')) || 99;
+          return distA - distB;
+        } else if (currentSort === 'time') {
+          var closeA = parseFloat(a.getAttribute('data-close')) || 0;
+          var closeB = parseFloat(b.getAttribute('data-close')) || 0;
+          return closeB - closeA;
+        } else {
+          var orderA = parseInt(a.getAttribute('data-order')) || 999;
+          var orderB = parseInt(b.getAttribute('data-order')) || 999;
+          return orderA - orderB;
+        }
+      });
+
+      cards.forEach(function(card) {
+        container.appendChild(card);
+      });
+
+      var countEl = document.getElementById('placesCount');
+      if (countEl) {
+        countEl.textContent = '顯示 ' + visibleCount + ' 處';
+      }
+
+      /* 🔍 5. 搜尋「無結果」空狀態提示 */
+      if (emptyNotice) {
+        emptyNotice.style.display = (visibleCount === 0) ? 'block' : 'none';
+      }
+    }
+
+    // 👆 iOS 原生左右滑動切換分頁 (Touch Swipe)
+    var tabOrder = ['tab-info', 'tab-mutop', 'tab-dining', 'tab-facilities', 'tab-diy', 'tab-local', 'tab-tips'];
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchEndX = 0;
+    var touchEndY = 0;
+
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.closest('#tabNav') || e.target.closest('#categoryPills') || e.target.closest('input')) return;
+      var x = e.changedTouches[0].screenX;
+      
+      /* 🛡️ 1. 排除 iPhone 邊緣手勢衝突（Edge Swipe Guard） */
+      if (x < 25 || x > window.innerWidth - 25) return;
+      
+      touchStartX = x;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      if (e.target.closest('#tabNav') || e.target.closest('#categoryPills') || e.target.closest('input')) return;
+      if (touchStartX === 0) return;
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipeGesture();
+      touchStartX = 0;
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+      var deltaX = touchEndX - touchStartX;
+      var deltaY = touchEndY - touchStartY;
+      if (Math.abs(deltaX) > 65 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        var activeTab = document.querySelector('.tab-content.active');
+        if (!activeTab) return;
+        var currentId = activeTab.id;
+        var idx = tabOrder.indexOf(currentId);
+        if (idx === -1) return;
+
+        if (deltaX < 0 && idx < tabOrder.length - 1) {
+          switchTab(null, tabOrder[idx + 1]);
+          triggerHaptic();
+        } else if (deltaX > 0 && idx > 0) {
+          switchTab(null, tabOrder[idx - 1]);
+          triggerHaptic();
+        }
+      }
+    }
+
+    // 📱 iPhone 滾動時自動收合鍵盤 ＆ 置頂按鈕智慧浮現
+    window.addEventListener('scroll', function() {
+      var searchInput = document.getElementById('localSearchInput');
+      if (document.activeElement === searchInput) {
+        searchInput.blur();
+      }
+
+      /* 🔝 3. 置頂按鈕智慧淡入淡出 */
+      var backBtn = document.getElementById('backToTopBtn');
+      if (backBtn) {
+        if (window.scrollY > 250) {
+          backBtn.classList.add('show');
+        } else {
+          backBtn.classList.remove('show');
+        }
+      }
+    }, { passive: true });
+
+    /* ⌨️ 2. 虛擬鍵盤避讓技術（Visual Viewport Keyboard Fix） */
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', function() {
+        var bottomBar = document.getElementById('bottomTabBar');
+        if (bottomBar) {
+          if (window.visualViewport.height < window.innerHeight * 0.75) {
+            bottomBar.style.transform = 'translateY(120%)';
+          } else {
+            bottomBar.style.transform = 'translateY(0)';
+          }
+        }
+      });
+    }
+
+    function handleNavScroll() {
+      var nav = document.getElementById("tabNav");
+      var container = document.getElementById("navContainer");
+      if (nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 10) {
+        container.classList.add("scrolled-end");
+      } else {
+        container.classList.remove("scrolled-end");
+      }
+    }
+
+    function switchTab(evt, tabId) {
+      triggerHaptic();
+      var tabcontents = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].classList.remove("active");
+      }
+      var targetTab = document.getElementById(tabId);
+      if (targetTab) { targetTab.classList.add("active"); }
+
+      var topButtons = document.getElementById("tabNav").getElementsByTagName("button");
+      for (var i = 0; i < topButtons.length; i++) { topButtons[i].classList.remove("active"); }
+
+      var bottomButtons = document.getElementById("bottomTabBar").getElementsByClassName("bottom-tab-item");
+      for (var i = 0; i < bottomButtons.length; i++) { bottomButtons[i].classList.remove("active"); }
+
+      var suffix = tabId.replace('tab-', '');
+      var currentTopBtn = document.querySelector(".tab-btn-" + suffix);
+      if (currentTopBtn) {
+        currentTopBtn.classList.add("active");
+        currentTopBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+      var currentBottomBtn = document.querySelector(".btn-" + suffix);
+      if (currentBottomBtn) currentBottomBtn.classList.add("active");
+
+      if (window.scrollY > 150) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    }
+
+    function toggleTheme() {
+      triggerHaptic();
+      document.body.classList.toggle('dark-mode');
+      var btn = document.querySelector('.theme-toggle-btn');
+      btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    }
+
+    function toggleFontSize() {
+      triggerHaptic();
+      document.body.classList.toggle('large-font');
+      var btn = document.querySelector('.font-toggle-btn');
+      if (document.body.classList.contains('large-font')) {
+        btn.textContent = 'A-';
+        btn.style.color = 'var(--accent)';
+      } else {
+        btn.textContent = 'A+';
+        btn.style.color = 'var(--dark)';
+      }
+    }
+
+    function copyText(text, btn) {
+      triggerHaptic('strong');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopySuccess(btn, text);
+        }).catch(function() {
+          fallbackCopyText(text, btn);
+        });
+      } else {
+        fallbackCopyText(text, btn);
+      }
+    }
+
+    function fallbackCopyText(text, btn) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.top = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showCopySuccess(btn, text);
+      } catch (err) {
+        alert('內容為：' + text);
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function showCopySuccess(btn, text) {
+      var originalText = btn.innerHTML;
+      btn.innerHTML = "✅ 已複製！";
+      var alertMsg = '已複製：「' + text + '」';
+      if (text.indexOf('路') !== -1 || text.indexOf('街') !== -1 || text.indexOf('號') !== -1 || text.indexOf('門') !== -1) {
+        alertMsg += '\n\n可直接至 Google Maps 搜尋欄長按貼上開始導航！';
+      }
+      alert(alertMsg);
+      setTimeout(function() { btn.innerHTML = originalText; }, 1500);
+    }
+
+    function updateLiveStatus() {
+      var now = new Date();
+      var hour = now.getHours();
+      var min = now.getMinutes();
+      var totalMin = hour * 60 + min;
+
+      var mutopStatus = document.getElementById("status-mutop");
+      if (mutopStatus) {
+        if (totalMin >= 13*60 && totalMin < 21*60) {
+          mutopStatus.className = "live-status status-open";
+          mutopStatus.innerHTML = "🟢 酒廊開放中";
+        } else {
+          mutopStatus.className = "live-status status-closed";
+          mutopStatus.innerHTML = "🔴 設施休館中";
+        }
+      }
+
+      var mutableStatus = document.getElementById("status-mutable");
+      if (mutableStatus) {
+        if ((totalMin >= 7*60 && totalMin < 11*60) || (totalMin >= 17*60 + 30 && totalMin < 21*60 + 30)) {
+          mutableStatus.className = "live-status status-open";
+          mutableStatus.innerHTML = "🟢 餐期供應中";
+        } else {
+          mutableStatus.className = "live-status status-closed";
+          mutableStatus.innerHTML = "🔴 非餐飲時段";
+        }
+      }
+
+      var guangStatus = document.getElementById("status-guangzhitang");
+      if (guangStatus) {
+        if ((totalMin >= 7*60 && totalMin < 11*60 + 30) || (totalMin >= 14*60 && totalMin < 22*60)) {
+          guangStatus.className = "live-status status-open";
+          guangStatus.innerHTML = "🟢 開放中";
+        } else {
+          guangStatus.className = "live-status status-closed";
+          guangStatus.innerHTML = "🔴 設施休館中";
+        }
+      }
+
+      var swimStatus = document.getElementById("status-swim");
+      if (swimStatus) {
+        if (totalMin < 7*60 || totalMin >= 22*60) {
+          swimStatus.className = "live-status status-closed";
+          swimStatus.innerHTML = "🔴 設施休館中";
+        } else if ((totalMin >= 12*60 && totalMin < 12*60 + 30) || (totalMin >= 18*60 && totalMin < 18*60 + 30)) {
+          swimStatus.className = "live-status status-closed";
+          swimStatus.innerHTML = "⚠️ 水質維護清場中";
+        } else {
+          swimStatus.className = "live-status status-open";
+          swimStatus.innerHTML = "🟢 水池開放中";
+        }
+      }
+
+      var racerStatus = document.getElementById("status-racer");
+      if (racerStatus) {
+        if ((totalMin >= 8*60 + 30 && totalMin < 10*60 + 30) || (totalMin >= 14*60 + 30 && totalMin < 17*60)) {
+          racerStatus.className = "live-status status-open";
+          racerStatus.innerHTML = "🟢 跑道開放中";
+        } else {
+          racerStatus.className = "live-status status-closed";
+          racerStatus.innerHTML = "🔴 非開放時段";
+        }
+      }
+    }
+
+    // 📱 iOS 系統外觀深淺色自適應初始化
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark-mode');
+      var themeBtn = document.querySelector('.theme-toggle-btn');
+      if (themeBtn) themeBtn.textContent = '🌙';
+    }
+
+    setInterval(updateLiveStatus, 1000);
+    window.addEventListener('load', function() {
+      handleNavScroll();
+      updateLiveStatus();
+      applyFilterAndSort();
+    });
+  </script>
+</body>
+</html>
