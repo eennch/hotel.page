@@ -73,18 +73,33 @@
       font-size: 1.2rem !important;
     }
 
+    /* 📱 iPhone 專屬 Anti-annoyance & 觸控優化 */
+    html, body {
+      touch-action: manipulation;
+      overscroll-behavior-y: none;
+      -webkit-text-size-adjust: 100%;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Microsoft JhengHei", Roboto, sans-serif;
+      /* ⚡ 消除 iOS 灰色點擊閃爍 */
+      -webkit-tap-highlight-color: transparent;
     }
+    button, .tab-nav, .bottom-tab-bar, .filter-pill, .sort-btn, .map-btn-action, .copy-btn, .tel-call-btn {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
     body {
       background-color: var(--bg);
       color: var(--dark);
       line-height: 1.65;
       padding-top: env(safe-area-inset-top);
-      padding-bottom: calc(95px + env(safe-area-inset-bottom));
+      padding-bottom: calc(105px + env(safe-area-inset-bottom));
       word-break: break-all;
       overflow-x: hidden;
       transition: background-color 0.3s, color 0.3s, font-size 0.2s;
@@ -334,6 +349,29 @@
       color: #fff;
     }
 
+    /* 📞 iPhone 原生直撥含分機按鈕 */
+    .tel-call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: bold;
+      padding: 11px 14px;
+      border-radius: 8px;
+      margin: 8px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      transition: opacity 0.2s, transform 0.2s;
+      width: 100%;
+      text-align: center;
+    }
+    .tel-call-btn:active {
+      opacity: 0.85;
+      transform: scale(0.98);
+    }
+
     /* 🟢/🔴 設施即時營運狀態標籤 */
     .live-status {
       display: inline-block;
@@ -394,7 +432,7 @@
       line-height: 1.48;
     }
 
-    /* 🎛️ 周邊控制台（類別篩選 ＆ 排序） */
+    /* 🎛️ 周邊控制台（類別篩選 ＆ 排序 ＆ iOS 毛玻璃搜尋列） */
     .filter-panel {
       background: var(--card-bg);
       border: 2px solid var(--accent);
@@ -402,6 +440,45 @@
       padding: 12px;
       margin-bottom: 16px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    .ios-search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background: rgba(240, 235, 226, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2px 10px;
+    }
+    body.dark-mode .ios-search-wrapper {
+      background: rgba(45, 38, 30, 0.8);
+    }
+    .ios-search-icon {
+      font-size: 0.92rem;
+      margin-right: 6px;
+      opacity: 0.7;
+    }
+    .ios-search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 0.88rem;
+      padding: 9px 0;
+      color: var(--dark);
+      font-family: inherit;
+    }
+    .ios-search-clear {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: var(--gray);
+      cursor: pointer;
+      display: none;
+      padding: 4px;
     }
     .filter-section-title {
       font-size: 0.82rem;
@@ -549,10 +626,6 @@
       white-space: nowrap;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
-    .map-btn-action:active {
-      opacity: 0.8;
-      transform: scale(0.98);
-    }
     .google-btn {
       background-color: #1a73e8;
       color: #ffffff;
@@ -615,33 +688,40 @@
       gap: 6px;
     }
 
-    /* 置頂按鈕 */
+    /* 🔝 置頂按鈕智慧淡入淡出（Smart Floating Button） */
     .back-to-top {
       position: fixed;
       right: 16px;
-      bottom: calc(85px + env(safe-area-inset-bottom));
-      width: 42px;
-      height: 42px;
-      background: rgba(46, 36, 28, 0.75);
+      bottom: calc(95px + env(safe-area-inset-bottom));
+      width: 44px;
+      height: 44px;
+      background: rgba(46, 36, 28, 0.8);
       color: #ffffff;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       cursor: pointer;
       z-index: 999;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      backdrop-filter: blur(4px);
-      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      /* 智慧浮現初始狀態 */
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .back-to-top:active {
-      transform: scale(0.9);
-      background: var(--accent);
+    /* 智慧浮現顯示狀態 */
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
-    /* 置底導覽列 */
+    /* 🛡️ iPhone 專屬加寬安全留白底部導覽列 */
     .bottom-tab-bar {
       position: fixed;
       bottom: 0;
@@ -652,9 +732,13 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 8px 0 calc(8px + env(safe-area-inset-bottom)) 0;
+      padding: 10px 0 calc(14px + env(safe-area-inset-bottom)) 0;
       z-index: 1000;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      /* 避讓鍵盤動畫 */
+      transition: transform 0.2s ease;
     }
     .bottom-tab-item {
       flex: 1;
@@ -670,13 +754,23 @@
       font-weight: bold;
       cursor: pointer;
       white-space: nowrap;
+      padding: 2px 0;
     }
     .bottom-tab-item .icon {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 2px;
     }
     .bottom-tab-item.active {
       color: var(--accent);
+    }
+
+    /* 🔍 搜尋「無結果」空狀態提示（Empty State Feedback） */
+    .empty-search-state {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--gray);
+      font-size: 0.88rem;
+      display: none;
     }
   </style>
 </head>
@@ -684,7 +778,7 @@
 
   <header>
     <h1>🏨 礁溪寒沐酒店・望岳閣尊榮全攻略</h1>
-    <p>全細節無漏 ＋ 確切金額明細 ＋ 原生 App 全螢幕版</p>
+    <p>全細節無漏 ＋ 確切金額明細 ＋ iPhone 手勢優化版</p>
     <div class="date-badge">📅 2026年12月5日 (六) ～ 12月7日 (一) 3天2夜</div>
   </header>
 
@@ -706,7 +800,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="mainContainer">
 
     <!-- TAB 1: 訂房硬體 -->
     <div id="tab-info" class="tab-content active">
@@ -734,7 +828,7 @@
           <li><strong>獨立更衣室（Walk-in Closet）：</strong><span class="hl">房內特別規劃獨立更衣間與行李置放檯面</span>。同行 5 人所有大行李箱與厚大衣通通可攤開收納於更衣室，客廳與兩張大床區域完全不雜亂，視覺開闊大器！</li>
           <li><strong>小美犀 AI 語音管家（附實用語音作弊條）：</strong>床頭聲控即可。
             <div class="info-box" style="margin: 6px 0; background-color: #faf7f2;">
-              <strong>🗣️ 老饕必備小美犀 5 大中文語音指令：</strong><br>
+              <strong>🗣️ 必備小美犀 5 大中文語音指令：</strong><br>
               1. 「小美犀，<span class="hl">關閉所有電燈</span>」（躺平免下床按開關）<br>
               2. 「小美犀，<span class="hl">房間溫度調到 23 度</span>」<br>
               3. 「小美犀，<span class="hl">播放放鬆的輕音樂</span>」（邊泡溫泉邊聽音樂極享受）<br>
@@ -774,7 +868,7 @@
         
         <div class="pillow-item"><div class="pillow-name"><span>🍃 天然茶香茶葉枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：壓力大、淺眠、喜愛草本自然茶香的旅客。</div></div>
         <div class="pillow-item"><div class="pillow-name"><span>🦾 人體工學記憶枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：習慣仰睡、肩頸容易痠痛、需要高度支撐力的人。</div></div>
-        <div class="pillow-item"><div class="pillow-name"><span>🛡️ 天然乳膠防蟎枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：容易過敏、睡覺容易流汗怕悶熱的人。</div></div>
+        <div class="pillow-item"><div class="pillow-name"><span>🛡️ 天然乳膠防蟎枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：容易過敏、睡覺容易流汗怕悶熱的人.</div></div>
         <div class="pillow-item"><div class="pillow-name"><span>☁️ 防過敏透氣纖維枕</span><span class="tag-free">🎁 房客免費更換</span></div><div class="item-desc">適合：喜愛蓬鬆包覆感且對羽絨過敏的人。</div></div>
       </div>
     </div>
@@ -813,7 +907,7 @@
         <div class="item-row">
           <div class="item-header"><span>19:30 - 21:00 ｜ 窗邊夜景延長戰（獨家兩段式玩法）</span><span class="tag-free">房客免費</span></div>
           <div class="item-desc">
-            ★ 老饕神操作玩法：<br>
+            ★ 神操作玩法：<br>
             1. 17:00 先上 12F 拿「酪梨蝦仁可頌」配酒開胃 ➔ 2. 19:00 下樓吃晚餐 ➔ 3. <span class="hl">19:30-20:00 餐後立刻回 12F，趁 20:00 收餐檯前將喜歡的酒杯與調酒在桌上「裝好裝滿」</span> ➔ 4. 20:00-21:00 常溫蔥麵包與綜合堅果不會收，優雅在星空窗邊品飲到 21:00！
           </div>
         </div>
@@ -822,7 +916,7 @@
         <div class="item-row">
           <div class="item-header"><span>頂級日本清酒與特色梅酒區</span><span class="tag-free">房客免費</span></div>
           <div class="item-desc">
-            ★ 網友狂推：<span class="hl">★「獺祭純米大吟釀 45」</span>（冰桶全程冰鎮）、<span class="hl">★「PLUMATE 凍頂烏龍茶梅酒」</span>（老饕秘訣：<span class="hl">跟管家索取「陶土杯與燙酒壺」溫熱喝</span>，冷天超暖身！）、日本柚子清酒、台灣精釀啤酒。
+            ★ 網友狂推：<span class="hl">★「獺祭純米大吟釀 45」</span>（冰桶全程冰鎮）、<span class="hl">★「PLUMATE 凍頂烏龍茶梅酒」</span>（秘訣：<span class="hl">跟管家索取「陶土杯與燙酒壺」溫熱喝</span>，冷天超暖身！）、日本柚子清酒、台灣精釀啤酒。
           </div>
         </div>
         <div class="item-row">
@@ -856,6 +950,11 @@
         </div>
         <p>擁有 350 坪寬敞空間，提供極受好評的早餐與晚餐饗宴！</p>
         
+        <!-- 📞 iPhone 一鍵直撥餐廳 -->
+        <a href="tel:039058000,5716" class="tel-call-btn" onclick="triggerHaptic('strong')">
+          📞 點擊一鍵直撥 MU TABLE 訂位（接通自動代撥分機 5716）
+        </a>
+
         <h3>🍳 自助早餐 (07:00 - 11:00) ｜ 超狂改裝「朝食七選」</h3>
         <p><span class="tag-free">專案已含・房客免費</span> <strong>★ 免排隊吃遍宜蘭排隊名店（2026年最新定價每位 NT$980，住房專案全包，價值感破表！）：</strong></p>
         
@@ -894,7 +993,7 @@
 
         <div class="alert-box" style="margin-top: 8px;">
           <strong>⚠️ 12月週末晚餐極度熱門・防雷警告：</strong><br>
-          12 月適逢大旺季加上冬季松葉蟹與海膽暢吃。<span class="hl">強烈建議最晚於出發前 3 天致電餐廳</span>（03-905-8000）預定好 <span class="hl">「第一梯次 (17:30 - 19:20)」</span> 或 <span class="hl">「第二梯次 (19:40 - 21:30)」</span> 分流（預留20分鐘全場清消），切勿當天進房才訂，避免現場排隊挨餓！
+          12 月適逢大旺季加上冬季松葉蟹與海膽暢吃。<span class="hl">強烈建議最晚於出發前 3 天致電餐廳</span>（03-905-8000）預定好 <span class="hl">「第一梯次 (17:30 - 19:20)」</span> 或 <span class="hl">「第二梯次 (19:40 - 21:30)」</span>分流（預留20分鐘全場清消），切勿當天進房才訂，避免現場排隊挨餓！
         </div>
 
         <p style="margin-top: 10px;"><strong>★ 網友晚餐必攻冬季狂熱：</strong></p>
@@ -1020,7 +1119,7 @@
         <div class="item-row">
           <div class="item-header"><span>館內季節手作 DIY ＆ 迎賓小點</span><span class="tag-free">房客免費</span></div>
           <div class="item-sub">地點：酒店棟 1F 大廳 / 樂未央 ｜ 14:00 - 16:30</div>
-          <div class="item-desc">提供 12 月聖誕節慶親子手作 DIY。★ 老饕強烈建議：<span class="hl">13:00 辦理入住時先在 12 樓向管家或樂未央預約登記名額</span>，以免客滿！</div>
+          <div class="item-desc">提供 12 月聖誕節慶親子手作 DIY。★ 💡 預約大推：<span class="hl">13:00 辦理入住時先在 12 樓向管家或樂未央預約登記名額</span>，以免客滿！</div>
         </div>
 
         <div class="item-row">
@@ -1056,19 +1155,25 @@
       </div>
     </div>
 
-    <!-- TAB 6: 礁溪周邊 (類別精確修正版) -->
+    <!-- TAB 6: 礁溪周邊 (類別精確修正 ＆ iOS 搜尋列版) -->
     <div id="tab-local" class="tab-content">
       <div class="card">
         <div class="card-title">🗺️ 礁溪寒沐周邊黃金美食與景點</div>
         
         <!-- 🎛️ 智慧篩選與排序面板 -->
         <div class="filter-panel">
+          <!-- 🔍 iOS 毛玻璃即時搜尋列 -->
+          <div class="ios-search-wrapper">
+            <span class="ios-search-icon">🔍</span>
+            <input type="text" id="localSearchInput" class="ios-search-input" placeholder="快速搜尋美食、景點、路名 (例: 臭豆腐、鴨、拉麵)..." oninput="handleSearchInput()" autocomplete="off" autocorrect="off" spellcheck="false">
+            <button class="ios-search-clear" id="searchClearBtn" onclick="clearLocalSearch()" title="清除">⨂</button>
+          </div>
           <div class="filter-section-title">
             <span>🏷️ 依類別篩選：</span>
-            <span class="results-count" id="placesCount">顯示全部 25 處</span>
+            <span class="results-count" id="placesCount">顯示全部 26 處</span>
           </div>
           <div class="filter-pills" id="categoryPills">
-            <button class="filter-pill active" onclick="setCategoryFilter('all', this)">全部 (25)</button>
+            <button class="filter-pill active" onclick="setCategoryFilter('all', this)">全部 (26)</button>
             <button class="filter-pill" onclick="setCategoryFilter('viral', this)">🔥 爆紅必吃</button>
             <button class="filter-pill" onclick="setCategoryFilter('dessert', this)">🍮 甜點甜湯</button>
             <button class="filter-pill" onclick="setCategoryFilter('supper', this)">🍢 散步宵夜</button>
@@ -1111,7 +1216,7 @@
             </div>
           </div>
 
-          <!-- 2. 阿亮烤肉 (宵夜/燒烤) -->
+          <!-- 2. 阿亮烤肉 -->
           <div class="local-card" data-cat="viral,supper" data-dist="5" data-close="25.5" data-order="2">
             <div class="local-card-header">
               <span class="local-title">🔥 阿亮烤肉（傳奇排隊消夜）</span>
@@ -1154,7 +1259,7 @@
           <!-- 4. 里海咖啡 -->
           <div class="local-card" data-cat="viral" data-dist="12" data-close="20.5" data-order="4">
             <div class="local-card-header">
-              <span class="local-title">🐟 里海咖啡（鮮魚定食天花板）</span>
+              <span class="local-title">🐟 里海咖啡（鮮魚定食天天板）</span>
               <div class="local-badge-wrap">
                 <span class="local-dist-badge">🚗 車程 5 分</span>
                 <span class="local-time-badge">至 20:30</span>
@@ -1190,7 +1295,7 @@
             </div>
           </div>
 
-          <!-- 6. 陳旺記鴉片飯 -->
+          <!-- 6.  陳旺記鴉片飯 -->
           <div class="local-card" data-cat="viral" data-dist="6" data-close="19.5" data-order="6">
             <div class="local-card-header">
               <span class="local-title">🦆 陳旺記鴉片飯（高CP爆紅小吃）</span>
@@ -1209,7 +1314,7 @@
             </div>
           </div>
 
-          <!-- 7. 柯氏蔥油餅 ＆ 吳記花生捲冰淇淋 (排隊現吃點心，非伴手禮) -->
+          <!-- 7. 柯氏蔥油餅 ＆ 吳記花生捲冰淇淋 -->
           <div class="local-card" data-cat="viral,supper" data-dist="8" data-close="18.0" data-order="7">
             <div class="local-card-header">
               <span class="local-title">🍳 柯氏蔥油餅 ＆ 吳記花生捲冰淇淋</span>
@@ -1307,7 +1412,7 @@
             </div>
           </div>
 
-          <!-- 12. 宜蘭滷之鄉 (深夜下酒滷味，非伴手禮) -->
+          <!-- 12. 宜蘭滷之鄉 -->
           <div class="local-card" data-cat="supper" data-dist="4" data-close="23.0" data-order="12">
             <div class="local-card-header">
               <span class="local-title">🦆 宜蘭滷之鄉（冰釀鴨肉名店）</span>
@@ -1327,7 +1432,7 @@
             </div>
           </div>
 
-          <!-- 13. 鴨喜露 (現買現啃下酒宵夜，非伴手禮) -->
+          <!-- 13. 鴨喜露 -->
           <div class="local-card" data-cat="supper" data-dist="5" data-close="20.0" data-order="13">
             <div class="local-card-header">
               <span class="local-title">🥩 鴨喜露（煙燻骨頭下酒滷味）</span>
@@ -1465,7 +1570,7 @@
             <p class="local-desc">排骨酥蒸到軟糯骨肉分離，古早味紅蔥頭高湯，懷舊人氣老字號。<br>★ 營業時間：11:00 - 20:00</p>
             <div class="map-btn-group">
               <button class="map-btn-action google-btn" onclick="openGoogleMap('礁溪排骨麵 宜蘭縣礁溪鄉中山路二段117號')">🗺️ Google 地圖導航</button>
-              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉中山路二段117號', this)">📋 複製地址</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('礁溪排骨麵 宜蘭縣礁溪鄉中山路二段117號', this)">📋 複製地址</button>
             </div>
           </div>
 
@@ -1538,7 +1643,7 @@
             </p>
             <div class="map-btn-group">
               <button class="map-btn-action google-btn" onclick="openGoogleMap('義珍香烘焙坊 礁溪店 宜蘭縣礁溪鄉礁溪路四段161號')">🗺️ Google 地圖導航</button>
-              <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路四段161號', this)">📋 複製地址</button>
+              <button class="map-btn-action copy-addr-btn" onclick="copyText('義珍香烘焙坊 礁溪店 宜蘭縣礁溪鄉礁溪路四段161號', this)">📋 複製地址</button>
             </div>
           </div>
 
@@ -1572,6 +1677,11 @@
               <button class="map-btn-action google-btn" onclick="openGoogleMap('礁溪溫泉廣場 宜蘭縣礁溪鄉礁溪路五段與溫泉路口')">🗺️ Google 地圖導航</button>
               <button class="map-btn-action copy-addr-btn" onclick="copyText('宜蘭縣礁溪鄉礁溪路五段與溫泉路口', this)">📋 複製地址</button>
             </div>
+          </div>
+
+          <!-- 🔍 搜尋「無結果」空狀態提示元件（Empty State Feedback） -->
+          <div id="emptySearchNotice" class="empty-search-state">
+            🔍 找不到相符的美食或景點，請嘗試輸入其他關鍵字！
           </div>
 
         </div><!-- end localCardsContainer -->
@@ -1612,13 +1722,19 @@
             直達專車 12歲以上 NT$ 300/趟、7-12歲 NT$ 150/趟、6歲以下免費。<br>
             • <span class="hl">最晚須於出發前一日 21:00 前完成官網線上預約</span>。</li>
           <li><strong>🚍 礁溪市區免費定點接駁車（來回礁溪火車站）：</strong>
-            往返礁溪火車站與轉運站。<span class="hl">最晚必須在入住前一天（12/4 五）致電飯店預約（03-905-8000 轉 5821 服務中心）</span>。
-            <button class="copy-btn" onclick="copyText('039058000,5821', this)">📋 複製電話及分機</button></li>
+            往返礁溪火車站與轉運站。<span class="hl">最晚必須在入住前一天（12/4 五）致電飯店預約</span>。
+            
+            <!-- 📞 iPhone 一鍵直撥服務中心 -->
+            <a href="tel:039058000,5821" class="tel-call-btn" onclick="triggerHaptic('strong')">
+              📞 點擊一鍵直撥服務中心預約接駁（接通自動代撥分機 5821）
+            </a>
+            <button class="copy-btn" onclick="copyText('039058000,5821', this)">📋 複製電話及分機</button>
+          </li>
         </ul>
       </div>
 
       <div class="card">
-        <div class="card-title">💡 老饕行前必看 4 大避雷神攻略</div>
+        <div class="card-title">💡 行前必看 4 大避雷神攻略</div>
         <div class="info-box">
           <strong>1. 📅 跨平假日人潮「避擠神時段」：</strong><br>
           • <strong>週六、日（假日尖峰）</strong>：親子設施大排長龍。<span class="hl">強烈建議將 1F 樂未央、小小賽車手排在「中午 12:30 抵達～15:00 進房前」</span>（舊旅客已退、新客未進，全館最空）！<br>
@@ -1627,7 +1743,7 @@
 
         <div class="info-box">
           <strong>2. 🧳 退房日跨棟行李動線最佳化（大眾運輸專屬）：</strong><br>
-          退房當日 (12/7) 11:00 退房後玩到 15:00。<span class="hl">老饕推薦動線：早上退房時行李直接寄放在「行館 1F 櫃檯」</span>，兩手空空只帶換洗衣物去酒店棟玩。15:00 在 6 樓洗好澡後，回行館大廳取行李，搭預約好的接駁車去火車站，完全不走回頭路！
+          退房當日 (12/7) 11:00 退房後玩到 15:00。<span class="hl">推薦動線：早上退房時行李直接寄放在「行館 1F 櫃檯」</span>，兩手空空只帶換洗衣物去酒店棟玩。15:00 在 6 樓洗好澡後，回行館大廳取行李，搭預約好的接駁車去火車站，完全不走回頭路！
         </div>
 
         <div class="info-box">
@@ -1650,7 +1766,7 @@
 
   </div>
 
-  <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" title="回到頂部">🔝</div>
+  <div class="back-to-top" id="backToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); triggerHaptic();" title="回到頂部">🔝</div>
 
   <div class="bottom-tab-bar" id="bottomTabBar">
     <button class="bottom-tab-item active btn-info" onclick="switchTab(event, 'tab-info')"><span class="icon">📌</span><span>訂房硬體</span></button>
@@ -1663,14 +1779,49 @@
   </div>
 
   <script>
+    // 📳 iOS 擬真觸覺回饋
+    function triggerHaptic(type) {
+      if (navigator.vibrate) {
+        navigator.vibrate(type === 'strong' ? [15, 30, 15] : 12);
+      }
+    }
+
+    // 🗺️ 喚醒 Google 地圖導航
     function openGoogleMap(query) {
+      triggerHaptic();
       window.location.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
     }
 
+    // 🎛️ 周邊景點智慧篩選、排序 ＆ 即時搜尋
     var currentCategory = 'all';
     var currentSort = 'default';
+    var searchQuery = '';
+
+    function handleSearchInput() {
+      var input = document.getElementById('localSearchInput');
+      var clearBtn = document.getElementById('searchClearBtn');
+      searchQuery = input.value.trim().toLowerCase();
+      if (searchQuery.length > 0) {
+        clearBtn.style.display = 'block';
+      } else {
+        clearBtn.style.display = 'none';
+      }
+      applyFilterAndSort();
+    }
+
+    function clearLocalSearch() {
+      triggerHaptic();
+      var input = document.getElementById('localSearchInput');
+      var clearBtn = document.getElementById('searchClearBtn');
+      input.value = '';
+      searchQuery = '';
+      clearBtn.style.display = 'none';
+      applyFilterAndSort();
+      input.focus();
+    }
 
     function setCategoryFilter(cat, btn) {
+      triggerHaptic();
       currentCategory = cat;
       var pills = document.querySelectorAll('.filter-pill');
       for (var i = 0; i < pills.length; i++) {
@@ -1681,6 +1832,7 @@
     }
 
     function setSortMode(mode, btn) {
+      triggerHaptic();
       currentSort = mode;
       var btns = document.querySelectorAll('.sort-btn');
       for (var i = 0; i < btns.length; i++) {
@@ -1693,11 +1845,16 @@
     function applyFilterAndSort() {
       var container = document.getElementById('localCardsContainer');
       var cards = Array.prototype.slice.call(container.querySelectorAll('.local-card'));
+      var emptyNotice = document.getElementById('emptySearchNotice');
       var visibleCount = 0;
 
       cards.forEach(function(card) {
         var cat = card.getAttribute('data-cat') || '';
-        if (currentCategory === 'all' || cat.indexOf(currentCategory) !== -1) {
+        var cardText = card.innerText.toLowerCase();
+        var matchCat = (currentCategory === 'all' || cat.indexOf(currentCategory) !== -1);
+        var matchSearch = (searchQuery === '' || cardText.indexOf(searchQuery) !== -1);
+
+        if (matchCat && matchSearch) {
           card.style.display = 'block';
           visibleCount++;
         } else {
@@ -1729,6 +1886,90 @@
       if (countEl) {
         countEl.textContent = '顯示 ' + visibleCount + ' 處';
       }
+
+      /* 🔍 5. 搜尋「無結果」空狀態提示 */
+      if (emptyNotice) {
+        emptyNotice.style.display = (visibleCount === 0) ? 'block' : 'none';
+      }
+    }
+
+    // 👆 iOS 原生左右滑動切換分頁 (Touch Swipe)
+    var tabOrder = ['tab-info', 'tab-mutop', 'tab-dining', 'tab-facilities', 'tab-diy', 'tab-local', 'tab-tips'];
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchEndX = 0;
+    var touchEndY = 0;
+
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.closest('#tabNav') || e.target.closest('#categoryPills') || e.target.closest('input')) return;
+      var x = e.changedTouches[0].screenX;
+      
+      /* 🛡️ 1. 排除 iPhone 邊緣手勢衝突（Edge Swipe Guard） */
+      if (x < 25 || x > window.innerWidth - 25) return;
+      
+      touchStartX = x;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      if (e.target.closest('#tabNav') || e.target.closest('#categoryPills') || e.target.closest('input')) return;
+      if (touchStartX === 0) return;
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipeGesture();
+      touchStartX = 0;
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+      var deltaX = touchEndX - touchStartX;
+      var deltaY = touchEndY - touchStartY;
+      if (Math.abs(deltaX) > 65 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        var activeTab = document.querySelector('.tab-content.active');
+        if (!activeTab) return;
+        var currentId = activeTab.id;
+        var idx = tabOrder.indexOf(currentId);
+        if (idx === -1) return;
+
+        if (deltaX < 0 && idx < tabOrder.length - 1) {
+          switchTab(null, tabOrder[idx + 1]);
+          triggerHaptic();
+        } else if (deltaX > 0 && idx > 0) {
+          switchTab(null, tabOrder[idx - 1]);
+          triggerHaptic();
+        }
+      }
+    }
+
+    // 📱 iPhone 滾動時自動收合鍵盤 ＆ 置頂按鈕智慧浮現
+    window.addEventListener('scroll', function() {
+      var searchInput = document.getElementById('localSearchInput');
+      if (document.activeElement === searchInput) {
+        searchInput.blur();
+      }
+
+      /* 🔝 3. 置頂按鈕智慧淡入淡出 */
+      var backBtn = document.getElementById('backToTopBtn');
+      if (backBtn) {
+        if (window.scrollY > 250) {
+          backBtn.classList.add('show');
+        } else {
+          backBtn.classList.remove('show');
+        }
+      }
+    }, { passive: true });
+
+    /* ⌨️ 2. 虛擬鍵盤避讓技術（Visual Viewport Keyboard Fix） */
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', function() {
+        var bottomBar = document.getElementById('bottomTabBar');
+        if (bottomBar) {
+          if (window.visualViewport.height < window.innerHeight * 0.75) {
+            bottomBar.style.transform = 'translateY(120%)';
+          } else {
+            bottomBar.style.transform = 'translateY(0)';
+          }
+        }
+      });
     }
 
     function handleNavScroll() {
@@ -1742,6 +1983,7 @@
     }
 
     function switchTab(evt, tabId) {
+      triggerHaptic();
       var tabcontents = document.getElementsByClassName("tab-content");
       for (var i = 0; i < tabcontents.length; i++) {
         tabcontents[i].classList.remove("active");
@@ -1768,12 +2010,14 @@
     }
 
     function toggleTheme() {
+      triggerHaptic();
       document.body.classList.toggle('dark-mode');
       var btn = document.querySelector('.theme-toggle-btn');
       btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
     }
 
     function toggleFontSize() {
+      triggerHaptic();
       document.body.classList.toggle('large-font');
       var btn = document.querySelector('.font-toggle-btn');
       if (document.body.classList.contains('large-font')) {
@@ -1786,6 +2030,7 @@
     }
 
     function copyText(text, btn) {
+      triggerHaptic('strong');
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(function() {
           showCopySuccess(btn, text);
@@ -1888,6 +2133,13 @@
           racerStatus.innerHTML = "🔴 非開放時段";
         }
       }
+    }
+
+    // 📱 iOS 系統外觀深淺色自適應初始化
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark-mode');
+      var themeBtn = document.querySelector('.theme-toggle-btn');
+      if (themeBtn) themeBtn.textContent = '🌙';
     }
 
     setInterval(updateLiveStatus, 1000);
